@@ -13212,3 +13212,10 @@ INFO 2025-01-31 11:15:46,350 autoreload 24924 27884 C:\Users\Nevada Man\CascadeP
 INFO 2025-01-31 11:15:47,248 autoreload 23600 4776 Watching for file changes with StatReloader
 INFO 2025-01-31 11:15:52,304 autoreload 23600 4776 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
 INFO 2025-01-31 11:15:53,200 autoreload 20888 26076 Watching for file changes with StatReloader
+INFO 2025-01-31 11:26:42,038 basehttp 20888 14780 "POST /dashboard/login/?next=/dashboard/ HTTP/1.1" 200 2218
+INFO 2025-01-31 19:56:48,733 autoreload 20888 26076 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
+INFO 2025-01-31 22:00:37,118 autoreload 26224 5944 Watching for file changes with StatReloader
+INFO 2025-01-31 22:32:33,615 autoreload 26224 5944 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\users\models.py changed, reloading.
+INFO 2025-01-31 22:32:34,475 autoreload 12196 30012 Watching for file changes with StatReloader
+INFO 2025-01-31 22:33:03,277 autoreload 12196 30012 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\users\models.py changed, reloading.
+INFO 2025-01-31 22:33:04,327 autoreload 26984 18644 Watching for file changes with StatReloader
