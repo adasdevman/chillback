@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = ['*']  # En développement uniquement
+ALLOWED_HOSTS = ['https://chillbackend.onrender.com', 'localhost', '127.0.0.1','chillbackend.onrender.com']  # En développement uniquement
 
 INSTALLED_APPS = [
     'django.contrib.admin',
