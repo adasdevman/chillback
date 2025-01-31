@@ -1,0 +1,72 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block title %}{{ action }} un utilisateur - Dashboard{% endblock %}
+
+{% block content %}
+<div class="data-table-container">
+    <div class="data-table-header">
+        <h2 class="data-title">
+            <i class="fas fa-user-{{ action|lower }}"></i> 
+            {{ action }} un utilisateur
+        </h2>
+    </div>
+    
+    <form method="post" class="custom-form">
+        {% csrf_token %}
+        {% if action == 'Modifier' %}
+        <div class="form-group mb-3">
+            <label class="form-label">Nom d'utilisateur</label>
+            <input type="text" name="username" class="form-control" 
+                   value="{{ user.username }}" required>
+        </div>
+        {% endif %}
+        
+        <div class="form-group mb-3">
+            <label class="form-label">Prénom</label>
+            <input type="text" name="first_name" class="form-control" 
+                   value="{% if user %}{{ user.first_name }}{% endif %}">
+        </div>
+        
+        <div class="form-group mb-3">
+            <label class="form-label">Nom</label>
+            <input type="text" name="last_name" class="form-control" 
+                   value="{% if user %}{{ user.last_name }}{% endif %}">
+        </div>
+        
+        <div class="form-group mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" 
+                   value="{% if user %}{{ user.email }}{% endif %}" required>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label class="form-label">Mot de passe {% if action == 'Modifier' %}(laisser vide pour ne pas modifier){% endif %}</label>
+            <input type="password" name="password" class="form-control" 
+                   {% if action == 'Créer' %}required{% endif %}>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label class="form-label">Rôle</label>
+            <select name="role" class="form-control" required>
+                <option value="UTILISATEUR" {% if user.role == 'UTILISATEUR' %}selected{% endif %}>Utilisateur</option>
+                <option value="ANNONCEUR" {% if user.role == 'ANNONCEUR' %}selected{% endif %}>Annonceur</option>
+                <option value="ADMIN" {% if user.role == 'ADMIN' %}selected{% endif %}>Administrateur</option>
+            </select>
+        </div>
+        
+        <div class="form-group mb-3">
+            <label class="form-label">Téléphone</label>
+            <input type="tel" name="telephone" class="form-control" 
+                   value="{% if user %}{{ user.phone_number }}{% endif %}">
+        </div>
+        
+        <div class="form-buttons">
+            <button type="submit" class="form-btn btn-create">
+                {% if user %}Modifier{% else %}Créer{% endif %}
+            </button>
+            <a href="{% url 'dashboard:users' %}" class="form-btn btn-cancel">Annuler</a>
+        </div>
+    </form>
+</div>
+{% endblock %} 

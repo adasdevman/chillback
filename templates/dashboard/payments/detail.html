@@ -1,0 +1,122 @@
+{% extends 'dashboard/base.html' %}
+
+{% block title %}Détail du Paiement{% endblock %}
+
+{% block content %}
+<div class="detail-section">
+    <div class="section-title">
+        <i class="fas fa-money-bill"></i>
+        Détail du Paiement #{{ payment.id }}
+        <div class="action-buttons">
+            <a href="{% url 'dashboard:payment_edit' payment.id %}" class="action-btn edit-btn">
+                <i class="fas fa-edit"></i>
+            </a>
+            <button type="button" class="action-btn delete-btn" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                <i class="fas fa-trash"></i>
+            </button>
+        </div>
+    </div>
+
+    {% if payment.annonce %}
+    <div class="detail-section mb-4">
+        <h3 class="section-subtitle">
+            <i class="fas fa-bullhorn"></i>
+            Annonce Liée
+        </h3>
+        <div class="detail-grid">
+            <div class="detail-item">
+                <div class="detail-label">Titre</div>
+                <div class="detail-value">{{ payment.annonce.titre }}</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Catégorie</div>
+                <div class="detail-value">{{ payment.annonce.categorie.nom }}</div>
+            </div>
+            <div class="detail-item">
+                <div class="detail-label">Localisation</div>
+                <div class="detail-value">{{ payment.annonce.localisation }}</div>
+            </div>
+            {% if payment.annonce.date_evenement %}
+            <div class="detail-item">
+                <div class="detail-label">Date de l'événement</div>
+                <div class="detail-value">{{ payment.annonce.date_evenement|date:"d/m/Y H:i" }}</div>
+            </div>
+            {% endif %}
+            <div class="detail-item span-2">
+                <div class="detail-label">Description</div>
+                <div class="detail-value">{{ payment.annonce.description|truncatewords:50 }}</div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="detail-grid">
+        <div class="detail-item">
+            <div class="detail-label">ID Transaction</div>
+            <div class="detail-value">{{ payment.transaction_id }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Utilisateur</div>
+            <div class="detail-value">{{ payment.user.email }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Montant</div>
+            <div class="detail-value">{{ payment.amount }} FCFA</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Statut</div>
+            <div class="detail-value">
+                <span class="role-badge {% if payment.status == 'COMPLETED' %}role-admin{% elif payment.status == 'PENDING' %}role-user{% else %}role-badge{% endif %}">
+                    {{ payment.status }}
+                </span>
+            </div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Type de Paiement</div>
+            <div class="detail-value">{{ payment.payment_type }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Date de Création</div>
+            <div class="detail-value">{{ payment.created|date:"d/m/Y H:i" }}</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Date de Mise à Jour</div>
+            <div class="detail-value">{{ payment.modified|date:"d/m/Y H:i" }}</div>
+        </div>
+        {% if payment.description %}
+        <div class="detail-item span-2">
+            <div class="detail-label">Description</div>
+            <div class="detail-value">{{ payment.description }}</div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Modal de suppression -->
+<div class="custom-modal modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">
+                    <i class="fas fa-exclamation-triangle text-danger"></i>
+                    Confirmer la suppression
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Êtes-vous sûr de vouloir supprimer ce paiement ? Cette action est irréversible.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="action-btn" data-bs-dismiss="modal">Annuler</button>
+                <form action="{% url 'dashboard:payment_delete' payment.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="action-btn delete-btn">
+                        <i class="fas fa-trash"></i>
+                        Supprimer
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
