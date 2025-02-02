@@ -13289,3 +13289,5 @@ INFO 2025-02-02 06:52:22,530 basehttp 29288 8644 "GET /dashboard/ HTTP/1.1" 200 
 INFO 2025-02-02 06:53:02,438 basehttp 29288 8644 "GET /dashboard/ HTTP/1.1" 200 8574
 INFO 2025-02-02 06:54:21,780 basehttp 29288 8644 "GET /dashboard/ HTTP/1.1" 200 8890
 INFO 2025-02-02 06:54:29,563 basehttp 29288 8644 "GET /dashboard/annonces/ HTTP/1.1" 200 20621
+INFO 2025-02-02 06:56:33,550 autoreload 29288 31380 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
+INFO 2025-02-02 06:58:03,170 autoreload 17052 19380 Watching for file changes with StatReloader
