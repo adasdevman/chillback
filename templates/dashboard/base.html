@@ -9,26 +9,61 @@
     <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @media (max-width: 991.98px) {
+            .desktop-menu {
+                display: none;
+            }
+        }
+        @media (min-width: 992px) {
+            .mobile-menu-button {
+                display: none;
+            }
+        }
+        .offcanvas {
+            max-width: 300px;
+        }
+        /* Ajout des styles pour les liens */
+        .nav-link:hover {
+            color: #ffc107 !important; /* Jaune Bootstrap */
+        }
+        .navbar-nav .nav-link {
+            transition: color 0.3s ease;
+        }
+        /* Style spécifique pour le menu mobile */
+        .offcanvas .nav-link:hover {
+            color: #ffc107 !important;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 <body>
     {% if user.is_authenticated %}
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
+    <nav class="navbar navbar-dark">
+        <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'dashboard:home' %}">
                 <img src="{% static 'images/Chillnow logo 1.png' %}" alt="Chillnow" height="30">
             </a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
+            
+            <!-- Bouton menu mobile -->
+            <button class="btn mobile-menu-button" type="button" data-bs-toggle="offcanvas" 
+                    data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu Desktop -->
+            <div class="desktop-menu">
+                <ul class="navbar-nav me-auto flex-row">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'dashboard:users' %}">Utilisateurs</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'dashboard:annonces' %}">Annonces</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'dashboard:payments' %}">Paiements</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mx-2">
                         <a class="nav-link" href="{% url 'dashboard:statistiques' %}">Statistiques</a>
                     </li>
                 </ul>
@@ -38,6 +73,35 @@
             </div>
         </div>
     </nav>
+
+    <!-- Menu Mobile Off-Canvas -->
+    <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu" 
+         aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="mobileMenuLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" 
+                    aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link py-2" href="{% url 'dashboard:users' %}">Utilisateurs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-2" href="{% url 'dashboard:annonces' %}">Annonces</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-2" href="{% url 'dashboard:payments' %}">Paiements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-2" href="{% url 'dashboard:statistiques' %}">Statistiques</a>
+                </li>
+                <li class="nav-item mt-4">
+                    <a class="nav-link py-2" href="{% url 'dashboard:logout' %}">Déconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     {% endif %}
 
     <div class="container mt-4">

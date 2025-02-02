@@ -13219,3 +13219,67 @@ INFO 2025-01-31 22:32:33,615 autoreload 26224 5944 C:\Users\Nevada Man\CascadePr
 INFO 2025-01-31 22:32:34,475 autoreload 12196 30012 Watching for file changes with StatReloader
 INFO 2025-01-31 22:33:03,277 autoreload 12196 30012 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\users\models.py changed, reloading.
 INFO 2025-01-31 22:33:04,327 autoreload 26984 18644 Watching for file changes with StatReloader
+INFO 2025-01-31 22:41:59,129 basehttp 26984 23240 "POST /dashboard/login/?next=/dashboard/ HTTP/1.1" 302 0
+INFO 2025-01-31 22:42:02,852 basehttp 26984 23240 "GET /dashboard/ HTTP/1.1" 200 5438
+INFO 2025-01-31 22:50:03,945 basehttp 26984 15856 "GET /dashboard/logout/ HTTP/1.1" 302 0
+INFO 2025-01-31 22:50:03,960 basehttp 26984 15856 "GET /dashboard/login/ HTTP/1.1" 200 2069
+INFO 2025-02-01 03:06:34,781 autoreload 26984 18644 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
+INFO 2025-02-01 03:11:40,272 autoreload 30616 18892 Watching for file changes with StatReloader
+INFO 2025-02-01 03:24:57,716 autoreload 30616 18892 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
+INFO 2025-02-01 03:25:01,438 autoreload 16896 11188 Watching for file changes with StatReloader
+INFO 2025-02-01 07:05:29,651 autoreload 16896 11188 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
+INFO 2025-02-01 07:05:31,610 autoreload 21988 18264 Watching for file changes with StatReloader
+INFO 2025-02-01 07:21:12,928 autoreload 21988 18264 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
+INFO 2025-02-01 07:21:13,835 autoreload 22668 25636 Watching for file changes with StatReloader
+INFO 2025-02-01 07:21:18,897 autoreload 22668 25636 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
+INFO 2025-02-02 06:25:51,754 autoreload 28608 3548 Watching for file changes with StatReloader
+INFO 2025-02-02 06:25:57,212 basehttp 28608 29284 "GET /dashboard/login/ HTTP/1.1" 200 2069
+INFO 2025-02-02 06:25:57,240 basehttp 28608 29284 "GET /static/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-02-02 06:25:58,814 basehttp 28608 29284 "GET /dashboard/login/ HTTP/1.1" 200 2069
+INFO 2025-02-02 06:26:08,541 basehttp 28608 29284 "POST /dashboard/login/ HTTP/1.1" 302 0
+INFO 2025-02-02 06:26:08,656 basehttp 28608 29284 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:28:10,979 basehttp 28608 29284 "GET /dashboard/logout/ HTTP/1.1" 302 0
+INFO 2025-02-02 06:28:10,985 basehttp 28608 29284 "GET /dashboard/login/ HTTP/1.1" 200 2069
+INFO 2025-02-02 06:28:46,551 basehttp 28608 29284 "GET /dashboard/login/ HTTP/1.1" 200 1952
+INFO 2025-02-02 06:29:38,791 basehttp 28608 29284 "GET /dashboard/login/ HTTP/1.1" 200 2846
+INFO 2025-02-02 06:30:09,046 basehttp 28608 29284 "GET /dashboard/login/ HTTP/1.1" 200 1952
+INFO 2025-02-02 06:30:47,225 autoreload 28608 3548 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
+INFO 2025-02-02 06:30:48,448 autoreload 27428 28636 Watching for file changes with StatReloader
+INFO 2025-02-02 06:31:05,291 autoreload 27428 28636 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
+INFO 2025-02-02 06:31:06,288 autoreload 29288 31380 Watching for file changes with StatReloader
+INFO 2025-02-02 06:31:07,867 basehttp 29288 27304 "GET /dashboard/login/ HTTP/1.1" 200 1952
+INFO 2025-02-02 06:31:10,356 basehttp 29288 27304 "POST /dashboard/login/ HTTP/1.1" 302 0
+INFO 2025-02-02 06:31:10,435 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:33:12,574 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:33:14,649 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:33:21,209 basehttp 29288 27304 "GET /dashboard/annonces/ HTTP/1.1" 200 17188
+INFO 2025-02-02 06:33:28,965 basehttp 29288 27304 "GET /dashboard/annonces/?page=2 HTTP/1.1" 200 17520
+INFO 2025-02-02 06:33:31,837 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:33:36,258 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:34:24,353 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:34:30,970 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:34:33,504 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:34:34,175 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:35:08,685 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:35:46,166 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:35:47,394 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:35:55,765 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:35:58,763 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:35:59,096 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:37:16,520 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:37:17,550 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:37:34,474 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:37:51,304 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:38:22,759 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:38:24,090 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:38:26,948 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:38:28,143 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:38:29,583 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:40:50,486 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:40:54,135 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:40:57,680 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:40:58,520 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:40:59,029 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:41:05,575 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 5457
+INFO 2025-02-02 06:42:56,883 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 7441
+INFO 2025-02-02 06:45:01,518 basehttp 29288 27304 "GET /dashboard/ HTTP/1.1" 200 7861
