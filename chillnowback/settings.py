@@ -197,12 +197,9 @@ CORS_ALLOW_ALL_ORIGINS = True  # En développement uniquement
 CORS_ALLOW_CREDENTIALS = True
 
 # Vous pouvez décommenter et mettre à jour ces lignes si vous voulez être plus restrictif
-# CORS_ALLOWED_ORIGINS = [
-#     "http://192.168.1.40:8081",
-#     "http://192.168.1.40:19000",
-#     "http://192.168.1.40:19006",
-#     "exp://192.168.1.40:19000"
-# ]
+CORS_ALLOWED_ORIGINS = [
+     "http://192.168.1.2:8081",
+ ]
 
 # Ajout des headers nécessaires
 CORS_ALLOW_HEADERS = [

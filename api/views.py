@@ -38,16 +38,60 @@ logger = logging.getLogger(__name__)
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login_view(request):
-    serializer = LoginSerializer(data=request.data)
-    if serializer.is_valid():
-        user = serializer.validated_data['user']
+    try:
+        logger.info(f"Login attempt received for email: {request.data.get('email', 'not provided')}")
+        
+        serializer = LoginSerializer(data=request.data)
+        if not serializer.is_valid():
+            logger.warning(f"Login validation failed: {serializer.errors}")
+            return Response(
+                {'error': 'Validation failed', 'details': serializer.errors},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        email = serializer.validated_data['email']
+        password = serializer.validated_data['password']
+        
+        logger.info(f"Checking if user exists with email: {email}")
+        
+        # Check if user exists and authenticate
+        user = authenticate(request, email=email, password=password)
+        if user is None:
+            logger.warning(f"Authentication failed for email: {email}")
+            return Response(
+                {'error': 'Email ou mot de passe incorrect'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if not user.is_active:
+            logger.warning(f"Inactive user attempted to login: {email}")
+            return Response(
+                {'error': 'Ce compte est inactif'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Generate tokens
         refresh = RefreshToken.for_user(user)
+        
         return Response({
-            'refresh': str(refresh),
             'access': str(refresh.access_token),
-            'user': UserSerializer(user).data
+            'refresh': str(refresh),
+            'user': {
+                'id': user.id,
+                'email': user.email,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'role': user.role,
+                'profile_image': user.profile_image.url if user.profile_image else None
+            }
         })
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
+    except Exception as e:
+        logger.error(f"Unexpected error during login: {str(e)}", exc_info=True)
+        return Response(
+            {'error': 'Une erreur inattendue est survenue'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 @api_view(['POST'])
 @permission_classes([AllowAny])

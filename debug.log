@@ -13291,3 +13291,39 @@ INFO 2025-02-02 06:54:21,780 basehttp 29288 8644 "GET /dashboard/ HTTP/1.1" 200 
 INFO 2025-02-02 06:54:29,563 basehttp 29288 8644 "GET /dashboard/annonces/ HTTP/1.1" 200 20621
 INFO 2025-02-02 06:56:33,550 autoreload 29288 31380 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\chillnowback\settings.py changed, reloading.
 INFO 2025-02-02 06:58:03,170 autoreload 17052 19380 Watching for file changes with StatReloader
+INFO 2025-02-02 06:58:40,312 basehttp 17052 29268 "GET /dashboard/annonces/ HTTP/1.1" 302 0
+INFO 2025-02-02 06:58:40,349 basehttp 17052 29268 "GET /dashboard/login/?next=/dashboard/annonces/ HTTP/1.1" 200 3778
+INFO 2025-02-02 06:58:47,266 basehttp 17052 29268 "POST /dashboard/login/?next=/dashboard/annonces/ HTTP/1.1" 302 0
+INFO 2025-02-02 06:58:50,868 basehttp 17052 29268 "GET /dashboard/ HTTP/1.1" 200 8890
+INFO 2025-02-04 10:54:57,662 basehttp 17052 31964 "GET / HTTP/1.1" 302 0
+INFO 2025-02-04 10:55:00,123 basehttp 17052 31964 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-02-04 10:55:00,140 basehttp 17052 31964 "GET /dashboard/login/?next=/dashboard/ HTTP/1.1" 200 3778
+INFO 2025-02-04 10:55:00,188 basehttp 17052 31964 "GET /static/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-02-09 16:06:40,814 autoreload 16844 11472 Watching for file changes with StatReloader
+INFO 2025-02-09 16:09:09,087 basehttp 16844 6752 "POST /api/auth/login/ HTTP/1.1" 200 638
+INFO 2025-02-09 16:09:12,842 basehttp 16844 3332 "GET /api/categories/ HTTP/1.1" 200 881
+INFO 2025-02-09 16:09:12,855 basehttp 16844 6752 "GET /api/categories/ HTTP/1.1" 200 881
+INFO 2025-02-09 16:09:13,347 basehttp 16844 7572 "GET /media/profile_images/9.png HTTP/1.1" 200 973311
+INFO 2025-02-09 16:09:16,563 basehttp 16844 6752 "GET /api/annonces/?categorie=1&sous_categorie=1 HTTP/1.1" 200 1549
+INFO 2025-02-09 16:09:16,884 basehttp 16844 7572 "GET /media/annonces/photos/4_PTPiCcU.png HTTP/1.1" 200 1795184
+INFO 2025-02-09 16:09:27,955 basehttp 16844 6752 "GET /api/annonces/?categorie=1&sous_categorie=1 HTTP/1.1" 200 1549
+INFO 2025-02-09 16:09:30,006 basehttp 16844 6752 "GET /api/profile/ HTTP/1.1" 200 244
+INFO 2025-02-09 16:09:30,207 basehttp 16844 15524 "GET /api/annonces/mes-tickets/ HTTP/1.1" 200 2
+INFO 2025-02-09 16:09:30,444 basehttp 16844 5928 "GET /api/annonces/mes-chills/ HTTP/1.1" 200 2
+INFO 2025-02-09 16:09:34,741 basehttp 16844 3332 "GET /api/annonces/?categorie=3 HTTP/1.1" 200 9186
+INFO 2025-02-09 16:09:40,942 basehttp 16844 15524 "GET /api/profile/ HTTP/1.1" 200 244
+INFO 2025-02-09 16:09:40,957 basehttp 16844 6752 "GET /api/annonces/?categorie=1&sous_categorie=1 HTTP/1.1" 200 1549
+INFO 2025-02-09 16:09:41,201 basehttp 16844 5928 "GET /api/annonces/mes-tickets/ HTTP/1.1" 200 2
+INFO 2025-02-09 16:09:43,719 basehttp 16844 6752 "GET /api/annonces/mes-chills/ HTTP/1.1" 200 2
+INFO 2025-02-09 16:09:55,476 basehttp 16844 6752 "GET /api/annonces/?categorie=3 HTTP/1.1" 200 9186
+INFO 2025-02-09 16:10:07,355 basehttp 16844 10272 "GET /api/annonces/mes-annonces/ HTTP/1.1" 200 28296
+INFO 2025-02-09 16:10:07,358 basehttp 16844 10272 - Broken pipe from ('192.168.1.2', 51138)
+INFO 2025-02-09 16:10:07,646 basehttp 16844 6752 "GET /api/profile/ HTTP/1.1" 200 244
+INFO 2025-02-09 16:10:07,790 basehttp 16844 5928 "GET /api/annonces/mes-tickets/ HTTP/1.1" 200 2
+INFO 2025-02-09 16:10:07,798 basehttp 16844 18796 "GET /api/annonces/mes-chills/ HTTP/1.1" 200 2
+INFO 2025-02-09 16:10:18,617 basehttp 16844 3332 - Broken pipe from ('192.168.1.2', 51118)
+INFO 2025-02-09 16:11:02,590 basehttp 16844 15524 - Broken pipe from ('192.168.1.2', 51140)
+INFO 2025-02-09 16:11:03,269 basehttp 16844 6752 "GET /api/annonces/?categorie=1&sous_categorie=2 HTTP/1.1" 200 4582
+INFO 2025-02-09 16:11:03,783 basehttp 16844 7572 "GET /media/annonces/photos/3_8BlNQjb.png HTTP/1.1" 200 1963096
+INFO 2025-02-09 16:11:03,791 basehttp 16844 17748 "GET /media/annonces/photos/6_2zz5T9Y.png HTTP/1.1" 200 1731847
+INFO 2025-02-09 16:11:03,826 basehttp 16844 18816 "GET /media/annonces/photos/3.png HTTP/1.1" 200 1963096

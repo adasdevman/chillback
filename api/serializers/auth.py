@@ -18,23 +18,35 @@ class UserSerializer(serializers.ModelSerializer):
         )
 
 class LoginSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    password = serializers.CharField()
+    email = serializers.EmailField(error_messages={
+        'required': 'L\'email est requis.',
+        'invalid': 'Veuillez fournir une adresse email valide.'
+    })
+    password = serializers.CharField(
+        style={'input_type': 'password'},
+        error_messages={
+            'required': 'Le mot de passe est requis.'
+        }
+    )
 
     def validate(self, data):
-        try:
-            user = User.objects.get(email=data['email'])
-            return {
-                'email': user.email,
-                'first_name': user.first_name,
-                'last_name': user.last_name,
-                'phone_number': user.phone_number,
-                'address': user.address,
-                'city': user.city,
-                'role': user.role,
-            }
-        except User.DoesNotExist:
-            raise serializers.ValidationError("Utilisateur non trouvé")
+        email = data.get('email')
+        password = data.get('password')
+
+        if not email:
+            raise serializers.ValidationError({
+                'email': 'L\'email est requis.'
+            })
+        
+        if not password:
+            raise serializers.ValidationError({
+                'password': 'Le mot de passe est requis.'
+            })
+
+        return {
+            'email': email,
+            'password': password
+        }
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
