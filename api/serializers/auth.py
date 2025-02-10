@@ -50,6 +50,7 @@ class LoginSerializer(serializers.Serializer):
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
+    phone_number = serializers.CharField(required=False, allow_blank=True)
 
     class Meta:
         model = User
