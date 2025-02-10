@@ -14,7 +14,8 @@ class UserSerializer(serializers.ModelSerializer):
             'phone_number',
             'address',
             'city',
-            'username'
+            'username',
+            'taux_avance'
         )
 
 class LoginSerializer(serializers.Serializer):

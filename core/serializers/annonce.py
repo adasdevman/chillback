@@ -5,6 +5,7 @@ from ..models import (
 )
 from .base import TimeStampedModelSerializer
 from .categorie import CategorieSerializer, SousCategorieSerializer
+from users.serializers import UserProfileSerializer
 
 class HoraireSerializer(serializers.ModelSerializer):
     heure_ouverture = serializers.SerializerMethodField()
@@ -38,6 +39,7 @@ class AnnonceListSerializer(TimeStampedModelSerializer):
     sous_categorie_nom = serializers.CharField(source='sous_categorie.nom', read_only=True)
     horaires = HoraireSerializer(source='horaire_set', many=True, read_only=True)
     tarifs = TarifSerializer(many=True, read_only=True)
+    annonceur = UserProfileSerializer(source='utilisateur', read_only=True)
 
     class Meta:
         model = Annonce
@@ -46,7 +48,7 @@ class AnnonceListSerializer(TimeStampedModelSerializer):
             'date_evenement', 'est_actif', 'categorie',
             'sous_categorie', 'photos', 'categorie_nom',
             'sous_categorie_nom', 'horaires', 'tarifs',
-            'created', 'modified'
+            'created', 'modified', 'annonceur'
         ]
 
 class AnnonceSerializer(TimeStampedModelSerializer):
@@ -55,6 +57,7 @@ class AnnonceSerializer(TimeStampedModelSerializer):
     photos = GaleriePhotoSerializer(many=True, read_only=True)
     horaires = HoraireSerializer(source='horaire_set', many=True, read_only=True)
     tarifs = TarifSerializer(many=True, read_only=True)
+    annonceur = UserProfileSerializer(source='utilisateur', read_only=True)
 
     class Meta:
         model = Annonce
@@ -62,7 +65,7 @@ class AnnonceSerializer(TimeStampedModelSerializer):
             'id', 'titre', 'description', 'localisation',
             'date_evenement', 'est_actif', 'categorie',
             'sous_categorie', 'categorie_nom', 'sous_categorie_nom',
-            'photos', 'horaires', 'tarifs',
+            'photos', 'horaires', 'tarifs', 'annonceur',
             'created', 'modified'
         ]
 
@@ -72,6 +75,7 @@ class AnnonceDetailSerializer(TimeStampedModelSerializer):
     horaires = HoraireSerializer(source='horaire_set', many=True, read_only=True)
     tarifs = TarifSerializer(many=True, read_only=True)
     photos = GaleriePhotoSerializer(many=True, read_only=True)
+    annonceur = UserProfileSerializer(source='utilisateur', read_only=True)
 
     class Meta:
         model = Annonce
@@ -79,7 +83,7 @@ class AnnonceDetailSerializer(TimeStampedModelSerializer):
             'id', 'utilisateur', 'categorie', 'sous_categorie',
             'titre', 'description', 'localisation', 'date_evenement',
             'est_actif', 'horaires', 'tarifs', 'photos',
-            'created', 'modified'
+            'created', 'modified', 'annonceur'
         ]
         read_only_fields = ['utilisateur']
 
