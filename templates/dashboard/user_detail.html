@@ -48,6 +48,12 @@
                     <div class="detail-label">Rôle</div>
                     <div class="detail-value">{{ user.role }}</div>
                 </div>
+                {% if user.role == 'ANNONCEUR' %}
+                <div class="detail-item">
+                    <div class="detail-label">Nom de l'entreprise</div>
+                    <div class="detail-value">{{ user.company_name|default:"-" }}</div>
+                </div>
+                {% endif %}
                 <div class="detail-item">
                     <div class="detail-label">Téléphone</div>
                     <div class="detail-value">{{ user.phone_number }}</div>

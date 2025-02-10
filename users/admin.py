@@ -4,11 +4,11 @@ from .models import User
 
 class CustomUserAdmin(UserAdmin):
     model = User
-    list_display = ('email', 'first_name', 'last_name', 'role', 'phone_number', 'city')
+    list_display = ('email', 'first_name', 'last_name', 'role', 'phone_number', 'city', 'company_name')
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Informations personnelles', {
-            'fields': ('first_name', 'last_name', 'phone_number', 'address', 'city')
+            'fields': ('first_name', 'last_name', 'phone_number', 'address', 'city', 'company_name')
         }),
         ('Permissions', {
             'fields': ('role', 'is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')
@@ -17,10 +17,10 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'password1', 'password2', 'role', 'is_staff', 'is_superuser')
+            'fields': ('email', 'password1', 'password2', 'role', 'company_name', 'is_staff', 'is_superuser')
         }),
     )
-    search_fields = ('email', 'first_name', 'last_name', 'city')
+    search_fields = ('email', 'first_name', 'last_name', 'city', 'company_name')
     ordering = ('email',)
 
 # Désenregistrer l'ancien admin si nécessaire

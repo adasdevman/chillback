@@ -48,11 +48,18 @@
         
         <div class="form-group mb-3">
             <label class="form-label">Rôle</label>
-            <select name="role" class="form-control" required>
+            <select name="role" class="form-control" required id="roleSelect">
                 <option value="UTILISATEUR" {% if user.role == 'UTILISATEUR' %}selected{% endif %}>Utilisateur</option>
                 <option value="ANNONCEUR" {% if user.role == 'ANNONCEUR' %}selected{% endif %}>Annonceur</option>
                 <option value="ADMIN" {% if user.role == 'ADMIN' %}selected{% endif %}>Administrateur</option>
             </select>
+        </div>
+        
+        <div class="form-group mb-3" id="companyNameGroup" style="display: {% if user.role == 'ANNONCEUR' %}block{% else %}none{% endif %};">
+            <label class="form-label">Nom de l'entreprise</label>
+            <input type="text" name="company_name" class="form-control" 
+                   value="{% if user %}{{ user.company_name }}{% endif %}"
+                   {% if user.role == 'ANNONCEUR' %}required{% endif %}>
         </div>
         
         <div class="form-group mb-3">
@@ -69,4 +76,18 @@
         </div>
     </form>
 </div>
+
+<script>
+    document.getElementById('roleSelect').addEventListener('change', function() {
+        var companyNameGroup = document.getElementById('companyNameGroup');
+        var companyNameInput = companyNameGroup.querySelector('input');
+        if (this.value === 'ANNONCEUR') {
+            companyNameGroup.style.display = 'block';
+            companyNameInput.required = true;
+        } else {
+            companyNameGroup.style.display = 'none';
+            companyNameInput.required = false;
+        }
+    });
+</script>
 {% endblock %} 

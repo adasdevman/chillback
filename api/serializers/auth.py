@@ -86,10 +86,27 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
 
 class AnnonceurRegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
+    company_name = serializers.CharField(required=True, error_messages={
+        'required': 'Le nom de l\'entreprise est requis pour les annonceurs.'
+    })
 
     class Meta:
         model = User
-        fields = ['email', 'password', 'first_name', 'last_name', 'phone_number']
+        fields = [
+            'email',
+            'password',
+            'first_name',
+            'last_name',
+            'phone_number',
+            'company_name'
+        ]
+
+    def validate(self, data):
+        if not data.get('company_name'):
+            raise serializers.ValidationError({
+                'company_name': 'Le nom de l\'entreprise est requis pour les annonceurs.'
+            })
+        return data
 
     def create(self, validated_data):
         user = User.objects.create_user(**validated_data, role='ANNONCEUR')
