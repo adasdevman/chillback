@@ -23,6 +23,7 @@ from .serializers.auth import (
     UpdateProfileSerializer,
     AnnonceurRegisterSerializer
 )
+from users.serializers import UserProfileSerializer
 from django.core.exceptions import ValidationError
 import logging
 from rest_framework.parsers import MultiPartParser, FormParser
@@ -125,10 +126,10 @@ def register_annonceur_view(request):
 @permission_classes([IsAuthenticated])
 def profile_view(request):
     if request.method == 'GET':
-        serializer = UserSerializer(request.user)
+        serializer = UserProfileSerializer(request.user)
         return Response(serializer.data)
     elif request.method == 'PUT':
-        serializer = UpdateProfileSerializer(request.user, data=request.data, partial=True)
+        serializer = UserProfileSerializer(request.user, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
