@@ -65,15 +65,15 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
 
     def create(self, validated_data):
-        # Remove username from extra_fields as it will be set from email
-        email = validated_data.get('email')
+        # Extract email and password
+        email = validated_data.pop('email')
         password = validated_data.pop('password')
         
-        # Create user with email as username
+        # Create user with extracted email and password
         user = User.objects.create_user(
             email=email,
             password=password,
-            **validated_data
+            **validated_data  # Rest of the fields
         )
         return user
 
