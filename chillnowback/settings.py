@@ -200,6 +200,8 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
      "http://192.168.1.2:8081",
      "http://192.168.8.101:8081",
+     "http://172.20.10.3:8081",
+     "http://192.168.1.168:8081"
  ]
 
 # Ajout des headers nécessaires

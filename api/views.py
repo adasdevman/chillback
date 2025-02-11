@@ -401,9 +401,16 @@ def mes_tickets(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def mes_chills(request):
-    chills = Payment.objects.filter(
+    # Récupérer les IDs des annonces pour lesquelles l'utilisateur a des paiements
+    annonce_ids = Payment.objects.filter(
         user=request.user,
-        payment_type='table'
-    ).select_related('annonce')
-    serializer = PaymentSerializer(chills, many=True)
+        status='COMPLETED'  # Utiliser le statut en majuscules
+    ).values_list('annonce_id', flat=True).distinct()
+    
+    # Récupérer les annonces correspondantes
+    chills = Annonce.objects.filter(
+        id__in=annonce_ids
+    ).prefetch_related('photos', 'horaires', 'tarifs').select_related('categorie', 'sous_categorie')
+    
+    serializer = AnnonceSerializer(chills, many=True)
     return Response(serializer.data) 
