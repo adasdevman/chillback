@@ -209,78 +209,42 @@ class AnnonceDetail(generics.RetrieveUpdateDestroyAPIView):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def create_payment(request):
+    """Crée un nouveau paiement."""
     try:
-        logger.info("Starting payment creation process")
-        logger.debug(f"Payment data received: {request.data}")
-
-        # Récupérer les données de base
-        annonce_id = request.data.get('annonce')
+        annonce_id = request.data.get('annonce_id')
+        tarif_id = request.data.get('tarif_id')
         payment_type = request.data.get('payment_type')
-        tarif_id = request.data.get('tarif')
 
-        # Récupérer l'annonce et vérifier l'existence
-        try:
-            annonce = Annonce.objects.select_related('utilisateur').get(id=annonce_id)
-        except Annonce.DoesNotExist:
-            logger.error(f"Annonce {annonce_id} not found")
-            return Response(
-                {'error': 'Annonce non trouvée'}, 
-                status=status.HTTP_404_NOT_FOUND
-            )
+        # Récupérer l'annonce et le tarif
+        annonce = Annonce.objects.get(id=annonce_id)
+        tarif = Tarif.objects.get(id=tarif_id)
 
-        # Récupérer le tarif et vérifier l'existence
-        try:
-            tarif = Tarif.objects.get(id=tarif_id, annonce=annonce)
-        except Tarif.DoesNotExist:
-            logger.error(f"Tarif {tarif_id} not found for annonce {annonce_id}")
-            return Response(
-                {'error': 'Tarif non trouvé'}, 
-                status=status.HTTP_404_NOT_FOUND
-            )
+        # Calculer le montant d'avance en fonction du type d'annonce
+        montant_total = float(tarif.prix)
+        taux_avance = 100 if annonce.categorie.nom == 'EVENT' else annonce.utilisateur.taux_avance
+        montant_avance = montant_total if taux_avance == 100 else (montant_total * taux_avance / 100)
 
-        # Calculer le montant d'avance
-        taux_avance = annonce.utilisateur.taux_avance
-        montant_total = tarif.prix
-        montant_avance = (montant_total * taux_avance) / 100
-
-        logger.info(f"Calculated advance amount: {montant_avance} (Total: {montant_total}, Rate: {taux_avance}%)")
-
-        # Créer les données de paiement
-        data = {
-            'user': request.user.id,
-            'annonce': annonce_id,
-            'amount': montant_avance,  # Utiliser le montant d'avance calculé
-            'payment_type': payment_type,
-            'tarif': tarif_id,
-            'status': 'pending'  # Statut initial
-        }
-        
-        serializer = PaymentSerializer(data=data, context={'request': request})
-        if serializer.is_valid():
-            payment = serializer.save()
-            
-            # Préparer la réponse avec les détails du paiement
-            response_data = serializer.data
-            response_data.update({
-                'montant_total': montant_total,
-                'montant_avance': montant_avance,
-                'taux_avance': taux_avance
-            })
-            
-            logger.info(f"Payment created successfully: {payment.id}")
-            return Response(response_data, status=status.HTTP_201_CREATED)
-        
-        logger.error(f"Payment validation errors: {serializer.errors}")
-        return Response(
-            {'error': serializer.errors}, 
-            status=status.HTTP_400_BAD_REQUEST
+        # Créer le paiement
+        payment = Payment.objects.create(
+            user=request.user,
+            annonce=annonce,
+            tarif=tarif,
+            amount=montant_avance,
+            payment_type=payment_type,
+            status='PENDING'
         )
 
+        return Response({
+            'id': payment.id,
+            'montant_total': montant_total,
+            'montant_avance': montant_avance,
+            'taux_avance': taux_avance
+        })
     except Exception as e:
-        logger.error(f"Error creating payment: {str(e)}", exc_info=True)
+        logger.error(f"Erreur dans create_payment: {str(e)}")
         return Response(
-            {'error': 'Une erreur est survenue lors de la création du paiement'}, 
-            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            {'error': 'Une erreur est survenue lors de la création du paiement'},
+            status=500
         )
 
 @api_view(['GET'])
@@ -401,30 +365,33 @@ def mes_tickets(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def mes_chills(request):
-    logger.info(f"Fetching chills for user: {request.user.id}")
-    
-    # Récupérer les IDs des annonces pour lesquelles l'utilisateur a des paiements validés
-    annonce_ids = Payment.objects.filter(
-        user=request.user,
-        status='COMPLETED'
-    ).values_list('annonce_id', flat=True).distinct()
-    
-    logger.info(f"Found annonce IDs: {list(annonce_ids)}")
-    
-    # Récupérer les annonces complètes avec toutes leurs relations
-    chills = Annonce.objects.filter(
-        id__in=annonce_ids
-    ).select_related(
-        'categorie',
-        'sous_categorie',
-        'utilisateur'
-    ).prefetch_related(
-        'photos',
-        'horaire_set',
-        'tarifs'
-    )
-    
-    logger.info(f"Found {chills.count()} chills")
-    
-    serializer = AnnonceSerializer(chills, many=True)
-    return Response(serializer.data) 
+    """Récupère les annonces pour lesquelles l'utilisateur a un paiement complété."""
+    try:
+        # Récupérer les IDs des annonces avec paiements complétés
+        annonce_ids = Payment.objects.filter(
+            user=request.user,
+            status='COMPLETED'
+        ).values_list('annonce_id', flat=True).distinct()
+
+        # Récupérer les annonces complètes avec leurs relations
+        chills = Annonce.objects.filter(
+            id__in=annonce_ids
+        ).select_related(
+            'categorie',
+            'sous_categorie',
+            'utilisateur'
+        ).prefetch_related(
+            'photos',
+            'horaire_set',
+            'tarifs'
+        )
+
+        # Sérialiser les données avec le sérialiseur complet
+        serializer = AnnonceSerializer(chills, many=True)
+        return Response(serializer.data)
+    except Exception as e:
+        logger.error(f"Erreur dans mes_chills: {str(e)}")
+        return Response(
+            {'error': 'Une erreur est survenue lors de la récupération de vos chills'},
+            status=500
+        ) 
