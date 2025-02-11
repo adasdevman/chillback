@@ -4,10 +4,14 @@ from .views import (
     login_view, register_view, register_annonceur_view,
     profile_view, CategorieList, AnnonceList, AnnonceDetail,
     create_payment, payment_history, CinetPayWebhookView,
-    check_email, mes_annonces, mes_tickets, mes_chills
+    check_email, mes_annonces, mes_tickets, mes_chills,
+    NotificationViewSet
 )
 
 app_name = 'api'
+
+router = DefaultRouter()
+router.register(r'notifications', NotificationViewSet, basename='notification')
 
 urlpatterns = [
     path('auth/login/', login_view, name='login'),
@@ -24,4 +28,6 @@ urlpatterns = [
     path('annonces/mes-annonces/', mes_annonces, name='mes-annonces'),
     path('annonces/mes-tickets/', mes_tickets, name='mes-tickets'),
     path('annonces/mes-chills/', mes_chills, name='mes-chills'),
-] 
+]
+
+urlpatterns += router.urls

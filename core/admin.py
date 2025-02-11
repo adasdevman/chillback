@@ -9,7 +9,8 @@ from .models import (
     Horaire,
     Tarif,
     GaleriePhoto,
-    Payment
+    Payment,
+    Notification
 )
 
 @admin.register(User)
@@ -103,6 +104,23 @@ class PaymentAdmin(admin.ModelAdmin):
         }),
         ('État du paiement', {
             'fields': ('status', 'payment_type', 'transaction_id')
+        }),
+        ('Dates', {
+            'fields': ('created', 'modified')
+        }),
+    )
+
+@admin.register(Notification)
+class NotificationAdmin(admin.ModelAdmin):
+    list_display = ['user', 'title', 'message', 'is_read', 'created']
+    list_filter = ['is_read', 'created']
+    search_fields = ['title', 'message', 'user__email']
+    readonly_fields = ['created', 'modified']
+    ordering = ['-created']
+
+    fieldsets = (
+        ('Informations', {
+            'fields': ('user', 'title', 'message', 'is_read')
         }),
         ('Dates', {
             'fields': ('created', 'modified')

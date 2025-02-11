@@ -14296,3 +14296,83 @@ INFO 2025-02-11 22:57:56,146 autoreload 284 596 C:\Users\Nevada Man\CascadeProje
 INFO 2025-02-11 22:57:57,989 autoreload 27260 7344 Watching for file changes with StatReloader
 INFO 2025-02-11 22:59:32,363 autoreload 27260 7344 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
 INFO 2025-02-11 22:59:33,355 autoreload 21312 6132 Watching for file changes with StatReloader
+INFO 2025-02-11 23:04:28,692 autoreload 21312 6132 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:04:29,730 autoreload 17820 18568 Watching for file changes with StatReloader
+INFO 2025-02-11 23:07:03,115 autoreload 17820 18568 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\__init__.py changed, reloading.
+INFO 2025-02-11 23:07:04,346 autoreload 2632 27320 Watching for file changes with StatReloader
+INFO 2025-02-11 23:12:20,489 autoreload 2632 27320 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:12:21,923 autoreload 15944 26296 Watching for file changes with StatReloader
+INFO 2025-02-11 23:12:29,145 autoreload 15944 26296 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:12:30,481 autoreload 20580 12932 Watching for file changes with StatReloader
+INFO 2025-02-11 23:13:23,021 autoreload 20580 12932 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:13:25,525 autoreload 12104 23092 Watching for file changes with StatReloader
+INFO 2025-02-11 23:13:30,800 autoreload 12104 23092 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:13:33,576 autoreload 26136 26832 Watching for file changes with StatReloader
+INFO 2025-02-11 23:14:11,815 autoreload 26136 26832 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-11 23:14:14,257 autoreload 24904 19532 Watching for file changes with StatReloader
+INFO 2025-02-11 23:14:20,401 autoreload 24904 19532 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-11 23:14:22,933 autoreload 19324 12524 Watching for file changes with StatReloader
+INFO 2025-02-11 23:15:11,658 autoreload 19324 12524 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-11 23:15:14,411 autoreload 5324 11804 Watching for file changes with StatReloader
+INFO 2025-02-11 23:15:27,378 autoreload 5324 11804 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-11 23:15:30,144 autoreload 20208 1140 Watching for file changes with StatReloader
+INFO 2025-02-11 23:16:47,186 autoreload 20208 1140 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:16:50,534 autoreload 13488 21300 Watching for file changes with StatReloader
+INFO 2025-02-11 23:18:51,886 autoreload 13488 21300 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-11 23:18:54,409 autoreload 2792 19764 Watching for file changes with StatReloader
+INFO 2025-02-11 23:19:42,826 autoreload 2792 19764 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:19:44,887 autoreload 17060 9528 Watching for file changes with StatReloader
+INFO 2025-02-11 23:20:32,178 autoreload 17060 9528 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-11 23:20:35,496 autoreload 25900 18664 Watching for file changes with StatReloader
+INFO 2025-02-11 23:21:59,400 autoreload 25900 18664 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:22:02,184 autoreload 5784 6720 Watching for file changes with StatReloader
+INFO 2025-02-11 23:22:21,227 autoreload 5784 6720 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:22:24,342 autoreload 19036 22640 Watching for file changes with StatReloader
+INFO 2025-02-11 23:22:32,848 autoreload 19036 22640 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-11 23:22:35,729 autoreload 21044 13648 Watching for file changes with StatReloader
+INFO 2025-02-11 23:22:48,014 autoreload 21044 13648 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:22:50,343 autoreload 18116 4888 Watching for file changes with StatReloader
+INFO 2025-02-11 23:23:50,769 autoreload 18116 4888 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:23:52,016 autoreload 20076 26096 Watching for file changes with StatReloader
+INFO 2025-02-11 23:24:18,318 basehttp 20076 24472 "GET /admin/ HTTP/1.1" 200 13604
+INFO 2025-02-11 23:24:18,485 basehttp 20076 17804 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-02-11 23:24:18,501 basehttp 20076 2244 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-02-11 23:24:18,504 basehttp 20076 17804 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-02-11 23:24:18,505 basehttp 20076 24472 "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-02-11 23:24:18,506 basehttp 20076 2244 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-02-11 23:24:18,516 basehttp 20076 24472 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-02-11 23:24:18,533 basehttp 20076 2244 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-02-11 23:24:18,554 basehttp 20076 2244 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-02-11 23:24:18,557 basehttp 20076 24472 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-02-11 23:24:18,557 basehttp 20076 17804 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-02-11 23:24:33,686 basehttp 20076 17804 "GET /admin/core/notification/ HTTP/1.1" 200 11984
+INFO 2025-02-11 23:24:33,701 basehttp 20076 7368 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-02-11 23:24:33,701 basehttp 20076 1016 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-02-11 23:24:33,702 basehttp 20076 17804 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-02-11 23:24:33,703 basehttp 20076 24336 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2025-02-11 23:24:33,708 basehttp 20076 1016 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-02-11 23:24:33,709 basehttp 20076 7368 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-02-11 23:24:33,714 basehttp 20076 17804 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-02-11 23:24:33,715 basehttp 20076 2244 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-02-11 23:24:33,718 basehttp 20076 24336 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-02-11 23:24:33,737 basehttp 20076 17804 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-02-11 23:24:33,748 basehttp 20076 17804 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-02-11 23:24:40,489 basehttp 20076 24472 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-11 23:24:40,535 basehttp 20076 24472 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-02-11 23:24:40,541 basehttp 20076 17804 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-02-11 23:24:53,686 basehttp 20076 17804 "GET /admin/core/notification/add/ HTTP/1.1" 200 15381
+INFO 2025-02-11 23:24:53,704 basehttp 20076 24336 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-02-11 23:24:53,705 basehttp 20076 17804 "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2025-02-11 23:24:54,561 basehttp 20076 24336 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2025-02-11 23:24:54,570 basehttp 20076 24336 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-02-11 23:24:58,010 basehttp 20076 24472 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-11 23:25:34,437 basehttp 20076 24472 "POST /admin/core/notification/add/ HTTP/1.1" 302 0
+INFO 2025-02-11 23:25:38,387 basehttp 20076 24472 "GET /admin/core/notification/ HTTP/1.1" 200 14557
+INFO 2025-02-11 23:25:38,410 basehttp 20076 24336 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-02-11 23:25:41,006 basehttp 20076 24472 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-11 23:25:41,034 basehttp 20076 24472 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-02-11 23:25:41,039 basehttp 20076 24336 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-02-11 23:26:25,317 autoreload 20076 26096 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:26:26,522 autoreload 27132 12408 Watching for file changes with StatReloader
+INFO 2025-02-11 23:27:11,034 autoreload 27132 12408 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-11 23:27:12,579 autoreload 17428 16324 Watching for file changes with StatReloader
