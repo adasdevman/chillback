@@ -211,6 +211,7 @@ class AnnonceDetail(generics.RetrieveUpdateDestroyAPIView):
 def create_payment(request):
     try:
         data = {
+            'user': request.user.id,
             'annonce': request.data.get('annonce'),
             'amount': request.data.get('amount'),
             'payment_type': request.data.get('payment_type'),
