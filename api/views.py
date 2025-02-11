@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate
 from users.models import User
 from core.models import (
     Categorie, SousCategorie, Annonce,
-    GaleriePhoto, Horaire, Payment, Tarif
+    GaleriePhoto, Horaire, Payment, Tarif, Notification
 )
 from core.serializers.annonce import (
     AnnonceListSerializer,
@@ -16,6 +16,7 @@ from core.serializers.annonce import (
     CategorieSerializer,
     PaymentSerializer
 )
+from core.serializers.notification import NotificationSerializer
 from .serializers.auth import (
     UserSerializer,
     LoginSerializer,
@@ -421,4 +422,18 @@ def mes_chills(request):
         return Response(
             {'error': 'Une erreur est survenue lors de la récupération de vos chills'},
             status=500
-        ) 
+        )
+
+class NotificationViewSet(ReadOnlyModelViewSet):
+    serializer_class = NotificationSerializer
+    
+    def get_queryset(self):
+        return Notification.objects.filter(user=self.request.user)
+    
+    @action(detail=False, methods=['GET'])
+    def unread_count(self, request):
+        count = self.get_queryset().filter(is_read=False).count()
+        return Response({'count': count})
+    
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user) 

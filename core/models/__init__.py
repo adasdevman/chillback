@@ -8,6 +8,7 @@ from .annonce import (
     GaleriePhoto
 )
 from .payment import Payment
+from .notification import Notification
 
 __all__ = [
     'TimeStampedModel',
@@ -17,5 +18,6 @@ __all__ = [
     'Horaire',
     'Tarif',
     'GaleriePhoto',
-    'Payment'
+    'Payment',
+    'Notification'
 ] 
