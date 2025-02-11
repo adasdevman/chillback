@@ -403,18 +403,26 @@ def mes_tickets(request):
 def mes_chills(request):
     logger.info(f"Fetching chills for user: {request.user.id}")
     
-    # Récupérer les IDs des annonces pour lesquelles l'utilisateur a des paiements
+    # Récupérer les IDs des annonces pour lesquelles l'utilisateur a des paiements validés
     annonce_ids = Payment.objects.filter(
         user=request.user,
-        status='COMPLETED'  # Utiliser le statut en majuscules
+        status='COMPLETED'
     ).values_list('annonce_id', flat=True).distinct()
     
     logger.info(f"Found annonce IDs: {list(annonce_ids)}")
     
-    # Récupérer les annonces correspondantes
+    # Récupérer les annonces complètes avec toutes leurs relations
     chills = Annonce.objects.filter(
         id__in=annonce_ids
-    ).prefetch_related('photos', 'horaire_set', 'tarifs').select_related('categorie', 'sous_categorie')
+    ).select_related(
+        'categorie',
+        'sous_categorie',
+        'utilisateur'
+    ).prefetch_related(
+        'photos',
+        'horaire_set',
+        'tarifs'
+    )
     
     logger.info(f"Found {chills.count()} chills")
     
