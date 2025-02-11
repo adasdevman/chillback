@@ -211,18 +211,36 @@ class AnnonceDetail(generics.RetrieveUpdateDestroyAPIView):
 def create_payment(request):
     """Crée un nouveau paiement."""
     try:
-        annonce_id = request.data.get('annonce_id')
-        tarif_id = request.data.get('tarif_id')
+        # Accepter les deux formats de paramètres
+        annonce_id = request.data.get('annonce_id') or request.data.get('annonce')
+        tarif_id = request.data.get('tarif_id') or request.data.get('tarif')
         payment_type = request.data.get('payment_type')
 
+        logger.info(f"Creating payment with: annonce_id={annonce_id}, tarif_id={tarif_id}, payment_type={payment_type}")
+
+        if not all([annonce_id, tarif_id, payment_type]):
+            return Response(
+                {'error': 'Paramètres manquants'},
+                status=400
+            )
+
         # Récupérer l'annonce et le tarif
-        annonce = Annonce.objects.get(id=annonce_id)
-        tarif = Tarif.objects.get(id=tarif_id)
+        try:
+            annonce = Annonce.objects.get(id=annonce_id)
+            tarif = Tarif.objects.get(id=tarif_id)
+        except (Annonce.DoesNotExist, Tarif.DoesNotExist) as e:
+            logger.error(f"Annonce ou tarif non trouvé: {str(e)}")
+            return Response(
+                {'error': 'Annonce ou tarif non trouvé'},
+                status=404
+            )
 
         # Calculer le montant d'avance en fonction du type d'annonce
         montant_total = float(tarif.prix)
         taux_avance = 100 if annonce.categorie.nom == 'EVENT' else annonce.utilisateur.taux_avance
         montant_avance = montant_total if taux_avance == 100 else (montant_total * taux_avance / 100)
+
+        logger.info(f"Payment calculation: total={montant_total}, taux={taux_avance}, avance={montant_avance}")
 
         # Créer le paiement
         payment = Payment.objects.create(
@@ -241,9 +259,9 @@ def create_payment(request):
             'taux_avance': taux_avance
         })
     except Exception as e:
-        logger.error(f"Erreur dans create_payment: {str(e)}")
+        logger.error(f"Erreur dans create_payment: {str(e)}", exc_info=True)
         return Response(
-            {'error': 'Une erreur est survenue lors de la création du paiement'},
+            {'error': str(e)},
             status=500
         )
 
