@@ -223,3 +223,13 @@ STATICFILES_FINDERS = [
 
 # Configuration de WhiteNoise pour la gestion des fichiers statiques
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Configuration CinetPay
+CINETPAY = {
+    'SITE_ID': os.getenv('CINETPAY_SITE_ID'),
+    'API_KEY': os.getenv('CINETPAY_API_KEY'),
+    'ENVIRONMENT': os.getenv('CINETPAY_ENVIRONMENT', 'PROD'),
+    'NOTIFY_URL': 'https://chillbackend.onrender.com/api/cinetpay/webhook/',  # URL de notification
+    'RETURN_URL': 'https://chillbackend.onrender.com/api/payment/success/',    # URL de retour après paiement
+    'CANCEL_URL': 'https://chillbackend.onrender.com/api/payment/cancel/',     # URL en cas d'annulation
+}

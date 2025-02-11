@@ -62,6 +62,15 @@
                    {% if user.role == 'ANNONCEUR' %}required{% endif %}>
         </div>
         
+        <div class="form-group mb-3" id="tauxAvanceGroup" style="display: {% if user.role == 'ANNONCEUR' %}block{% else %}none{% endif %};">
+            <label class="form-label">Taux d'avance (%)</label>
+            <input type="number" name="taux_avance" class="form-control" 
+                   value="{% if user %}{{ user.taux_avance }}{% endif %}"
+                   min="0" max="100"
+                   {% if user.role == 'ANNONCEUR' %}required{% endif %}>
+            <small class="form-text text-muted">Pourcentage d'avance requis pour les annonces (0-100)</small>
+        </div>
+        
         <div class="form-group mb-3">
             <label class="form-label">Téléphone</label>
             <input type="tel" name="telephone" class="form-control" 
@@ -80,13 +89,19 @@
 <script>
     document.getElementById('roleSelect').addEventListener('change', function() {
         var companyNameGroup = document.getElementById('companyNameGroup');
+        var tauxAvanceGroup = document.getElementById('tauxAvanceGroup');
         var companyNameInput = companyNameGroup.querySelector('input');
+        var tauxAvanceInput = tauxAvanceGroup.querySelector('input');
         if (this.value === 'ANNONCEUR') {
             companyNameGroup.style.display = 'block';
+            tauxAvanceGroup.style.display = 'block';
             companyNameInput.required = true;
+            tauxAvanceInput.required = true;
         } else {
             companyNameGroup.style.display = 'none';
+            tauxAvanceGroup.style.display = 'none';
             companyNameInput.required = false;
+            tauxAvanceInput.required = false;
         }
     });
 </script>
