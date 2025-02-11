@@ -4,8 +4,7 @@ from .views import (
     login_view, register_view, register_annonceur_view,
     profile_view, CategorieList, AnnonceList, AnnonceDetail,
     create_payment, payment_history, CinetPayWebhookView,
-    check_email, mes_annonces, mes_tickets, mes_chills,
-    notification
+    check_email, mes_annonces, mes_tickets, mes_chills
 )
 
 app_name = 'api'
@@ -25,7 +24,4 @@ urlpatterns = [
     path('annonces/mes-annonces/', mes_annonces, name='mes-annonces'),
     path('annonces/mes-tickets/', mes_tickets, name='mes-tickets'),
     path('annonces/mes-chills/', mes_chills, name='mes-chills'),
-    path('notifications/', notification.notifications_list, name='notifications-list'),
-    path('notifications/<str:notification_id>/read/', notification.mark_notification_read, name='mark-notification-read'),
-    path('notifications/mark-all-read/', notification.mark_all_read, name='mark-all-notifications-read'),
 ] 
