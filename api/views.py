@@ -237,10 +237,11 @@ def create_payment(request):
 
         # Calculer le montant d'avance en fonction du type d'annonce
         montant_total = float(tarif.prix)
-        taux_avance = 100 if annonce.categorie.nom == 'EVENT' else annonce.utilisateur.taux_avance
+        is_event = annonce.categorie.nom == 'EVENT'
+        taux_avance = 100 if is_event else annonce.utilisateur.taux_avance
         montant_avance = montant_total if taux_avance == 100 else (montant_total * taux_avance / 100)
 
-        logger.info(f"Payment calculation: total={montant_total}, taux={taux_avance}, avance={montant_avance}")
+        logger.info(f"Payment calculation: total={montant_total}, taux={taux_avance}, avance={montant_avance}, is_event={is_event}")
 
         # Créer le paiement
         payment = Payment.objects.create(
@@ -252,12 +253,20 @@ def create_payment(request):
             status='PENDING'
         )
 
-        return Response({
+        # Adapter la réponse en fonction du type d'annonce
+        response_data = {
             'id': payment.id,
             'montant_total': montant_total,
-            'montant_avance': montant_avance,
-            'taux_avance': taux_avance
-        })
+        }
+
+        # N'inclure le taux d'avance et le montant d'avance que pour les non-événements
+        if not is_event:
+            response_data.update({
+                'montant_avance': montant_avance,
+                'taux_avance': taux_avance
+            })
+
+        return Response(response_data)
     except Exception as e:
         logger.error(f"Erreur dans create_payment: {str(e)}", exc_info=True)
         return Response(
