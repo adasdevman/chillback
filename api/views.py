@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate
 from users.models import User
 from core.models import (
     Categorie, SousCategorie, Annonce,
-    GaleriePhoto, Horaire, Payment
+    GaleriePhoto, Horaire, Payment, Tarif
 )
 from core.serializers.annonce import (
     AnnonceListSerializer,
@@ -210,29 +210,77 @@ class AnnonceDetail(generics.RetrieveUpdateDestroyAPIView):
 @permission_classes([IsAuthenticated])
 def create_payment(request):
     try:
+        logger.info("Starting payment creation process")
+        logger.debug(f"Payment data received: {request.data}")
+
+        # Récupérer les données de base
+        annonce_id = request.data.get('annonce')
+        payment_type = request.data.get('payment_type')
+        tarif_id = request.data.get('tarif')
+
+        # Récupérer l'annonce et vérifier l'existence
+        try:
+            annonce = Annonce.objects.select_related('utilisateur').get(id=annonce_id)
+        except Annonce.DoesNotExist:
+            logger.error(f"Annonce {annonce_id} not found")
+            return Response(
+                {'error': 'Annonce non trouvée'}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Récupérer le tarif et vérifier l'existence
+        try:
+            tarif = Tarif.objects.get(id=tarif_id, annonce=annonce)
+        except Tarif.DoesNotExist:
+            logger.error(f"Tarif {tarif_id} not found for annonce {annonce_id}")
+            return Response(
+                {'error': 'Tarif non trouvé'}, 
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Calculer le montant d'avance
+        taux_avance = annonce.utilisateur.taux_avance
+        montant_total = tarif.prix
+        montant_avance = (montant_total * taux_avance) / 100
+
+        logger.info(f"Calculated advance amount: {montant_avance} (Total: {montant_total}, Rate: {taux_avance}%)")
+
+        # Créer les données de paiement
         data = {
             'user': request.user.id,
-            'annonce': request.data.get('annonce'),
-            'amount': request.data.get('amount'),
-            'payment_type': request.data.get('payment_type'),
-            'tarif': request.data.get('tarif'),
+            'annonce': annonce_id,
+            'amount': montant_avance,  # Utiliser le montant d'avance calculé
+            'payment_type': payment_type,
+            'tarif': tarif_id,
+            'status': 'pending'  # Statut initial
         }
         
         serializer = PaymentSerializer(data=data, context={'request': request})
         if serializer.is_valid():
             payment = serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            
+            # Préparer la réponse avec les détails du paiement
+            response_data = serializer.data
+            response_data.update({
+                'montant_total': montant_total,
+                'montant_avance': montant_avance,
+                'taux_avance': taux_avance
+            })
+            
+            logger.info(f"Payment created successfully: {payment.id}")
+            return Response(response_data, status=status.HTTP_201_CREATED)
         
         logger.error(f"Payment validation errors: {serializer.errors}")
         return Response(
             {'error': serializer.errors}, 
             status=status.HTTP_400_BAD_REQUEST
         )
+
     except Exception as e:
-        logger.error(f"Error creating payment: {str(e)}")
+        logger.error(f"Error creating payment: {str(e)}", exc_info=True)
         return Response(
-            {'error': str(e)}, 
-            status=status.HTTP_400_BAD_REQUEST
+            {'error': 'Une erreur est survenue lors de la création du paiement'}, 
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
 
 @api_view(['GET'])
