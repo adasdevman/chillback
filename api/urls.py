@@ -5,11 +5,7 @@ from .views import (
     profile_view, CategorieList, AnnonceList, AnnonceDetail,
     create_payment, payment_history, CinetPayWebhookView,
     check_email, mes_annonces, mes_tickets, mes_chills,
-    NotificationViewSet,
-    AnnonceViewSet,
-    CategorieViewSet,
-    SousCategorieViewSet,
-    PaymentViewSet,
+    NotificationViewSet
 )
 
 app_name = 'api'
@@ -32,8 +28,8 @@ urlpatterns = [
     path('payments/webhook/cinetpay/', CinetPayWebhookView.as_view(), name='cinetpay-webhook'),
     path('auth/check-email/', check_email, name='check-email'),
     path('annonces/mes-annonces/', mes_annonces, name='mes-annonces'),
-    path('payments/mes-tickets/', PaymentViewSet.as_view({'get': 'mes_tickets'}), name='mes-tickets'),
-    path('payments/mes-chills/', PaymentViewSet.as_view({'get': 'mes_chills'}), name='mes-chills'),
+    path('annonces/mes-tickets/', mes_tickets, name='mes-tickets'),
+    path('annonces/mes-chills/', mes_chills, name='mes-chills'),
 ]
 
 # Then extend the urlpatterns with the router URLs
