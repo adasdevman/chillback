@@ -20,4 +20,4 @@ __all__ = [
     'GaleriePhoto',
     'Payment',
     'Notification'
-] 
+]

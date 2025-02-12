@@ -14376,3 +14376,303 @@ INFO 2025-02-11 23:26:25,317 autoreload 20076 26096 C:\Users\Nevada Man\CascadeP
 INFO 2025-02-11 23:26:26,522 autoreload 27132 12408 Watching for file changes with StatReloader
 INFO 2025-02-11 23:27:11,034 autoreload 27132 12408 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
 INFO 2025-02-11 23:27:12,579 autoreload 17428 16324 Watching for file changes with StatReloader
+INFO 2025-02-11 23:28:04,727 autoreload 17428 16324 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:28:05,760 autoreload 28076 28628 Watching for file changes with StatReloader
+INFO 2025-02-11 23:29:32,060 autoreload 28076 28628 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:29:33,441 autoreload 3868 22972 Watching for file changes with StatReloader
+INFO 2025-02-11 23:29:46,332 autoreload 3868 22972 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:29:49,208 autoreload 19688 18016 Watching for file changes with StatReloader
+INFO 2025-02-11 23:29:54,220 autoreload 19688 18016 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:29:56,117 autoreload 1200 17556 Watching for file changes with StatReloader
+INFO 2025-02-11 23:32:19,951 autoreload 1200 17556 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:32:21,061 autoreload 28312 22464 Watching for file changes with StatReloader
+INFO 2025-02-11 23:33:44,967 autoreload 28312 22464 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:33:46,938 autoreload 12636 3428 Watching for file changes with StatReloader
+INFO 2025-02-11 23:34:05,119 autoreload 12636 3428 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:34:06,821 autoreload 10204 19448 Watching for file changes with StatReloader
+INFO 2025-02-11 23:34:08,862 autoreload 10204 19448 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:34:10,196 autoreload 28420 3968 Watching for file changes with StatReloader
+INFO 2025-02-11 23:34:39,063 autoreload 28420 3968 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:34:40,441 autoreload 24212 21060 Watching for file changes with StatReloader
+INFO 2025-02-11 23:34:51,545 autoreload 24212 21060 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:34:52,888 autoreload 27104 20812 Watching for file changes with StatReloader
+INFO 2025-02-11 23:35:01,403 autoreload 27104 20812 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:35:02,483 autoreload 23764 23708 Watching for file changes with StatReloader
+INFO 2025-02-11 23:37:19,392 autoreload 23764 23708 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:37:20,409 autoreload 2244 16880 Watching for file changes with StatReloader
+INFO 2025-02-11 23:37:24,732 autoreload 2244 16880 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:37:25,767 autoreload 13480 18460 Watching for file changes with StatReloader
+INFO 2025-02-11 23:38:14,026 autoreload 13480 18460 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-11 23:38:16,086 autoreload 19220 21788 Watching for file changes with StatReloader
+INFO 2025-02-11 23:38:28,368 autoreload 19220 21788 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\__init__.py changed, reloading.
+INFO 2025-02-11 23:38:30,160 autoreload 24040 23208 Watching for file changes with StatReloader
+INFO 2025-02-11 23:40:51,605 autoreload 24040 23208 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\__init__.py changed, reloading.
+INFO 2025-02-11 23:40:52,592 autoreload 26152 24616 Watching for file changes with StatReloader
+INFO 2025-02-11 23:41:13,572 autoreload 26152 24616 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\__init__.py changed, reloading.
+INFO 2025-02-11 23:41:15,358 autoreload 28492 3440 Watching for file changes with StatReloader
+INFO 2025-02-11 23:41:29,704 autoreload 28492 3440 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\__init__.py changed, reloading.
+INFO 2025-02-11 23:41:31,433 autoreload 21040 24020 Watching for file changes with StatReloader
+INFO 2025-02-11 23:43:10,840 autoreload 21040 24020 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\notification.py changed, reloading.
+INFO 2025-02-11 23:43:12,032 autoreload 24100 20784 Watching for file changes with StatReloader
+INFO 2025-02-11 23:43:19,811 autoreload 24100 20784 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\notification.py changed, reloading.
+INFO 2025-02-11 23:43:20,905 autoreload 17804 15292 Watching for file changes with StatReloader
+INFO 2025-02-11 23:43:54,230 autoreload 17804 15292 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:43:55,477 autoreload 25652 16316 Watching for file changes with StatReloader
+INFO 2025-02-11 23:44:03,064 autoreload 25652 16316 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:44:04,547 autoreload 22812 4932 Watching for file changes with StatReloader
+INFO 2025-02-11 23:46:28,076 basehttp 22812 28528 "GET /admin/core/notification/ HTTP/1.1" 200 14327
+INFO 2025-02-11 23:46:33,596 autoreload 22812 4932 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\notification.py changed, reloading.
+INFO 2025-02-11 23:46:34,792 autoreload 25564 28280 Watching for file changes with StatReloader
+INFO 2025-02-11 23:46:45,554 basehttp 25564 17968 "GET /admin/core/notification/add/ HTTP/1.1" 200 15381
+INFO 2025-02-11 23:46:48,237 basehttp 25564 17968 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-11 23:46:55,385 autoreload 25564 28280 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:46:56,544 autoreload 21104 15840 Watching for file changes with StatReloader
+INFO 2025-02-11 23:47:06,662 autoreload 21104 15840 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\__init__.py changed, reloading.
+INFO 2025-02-11 23:47:07,979 autoreload 3968 24784 Watching for file changes with StatReloader
+INFO 2025-02-11 23:47:14,454 autoreload 3968 24784 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:47:16,518 autoreload 28640 3300 Watching for file changes with StatReloader
+INFO 2025-02-11 23:47:21,044 autoreload 28640 3300 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\notification.py changed, reloading.
+INFO 2025-02-11 23:47:22,645 autoreload 17228 23064 Watching for file changes with StatReloader
+INFO 2025-02-11 23:47:27,850 autoreload 17228 23064 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:47:29,318 autoreload 17620 21396 Watching for file changes with StatReloader
+INFO 2025-02-11 23:47:34,863 autoreload 17620 21396 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\notification.py changed, reloading.
+INFO 2025-02-11 23:47:36,482 autoreload 26664 3780 Watching for file changes with StatReloader
+INFO 2025-02-11 23:50:32,508 autoreload 26664 3780 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\notification.py changed, reloading.
+INFO 2025-02-11 23:50:33,639 autoreload 25492 28052 Watching for file changes with StatReloader
+INFO 2025-02-11 23:50:45,532 autoreload 25492 28052 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-11 23:50:47,050 autoreload 11764 3728 Watching for file changes with StatReloader
+INFO 2025-02-12 00:03:01,411 autoreload 11764 3728 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\__init__.py changed, reloading.
+INFO 2025-02-12 00:03:03,685 autoreload 3880 17628 Watching for file changes with StatReloader
+INFO 2025-02-12 00:03:31,192 basehttp 3880 18788 "GET /admin/core/notification/add/ HTTP/1.1" 200 15381
+INFO 2025-02-12 00:03:34,336 basehttp 3880 18788 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 00:03:52,905 basehttp 3880 18788 "GET /admin/users/user/add/?_to_field=id&_popup=1 HTTP/1.1" 200 9952
+INFO 2025-02-12 00:03:53,536 basehttp 3880 26552 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2025-02-12 00:03:53,541 basehttp 3880 26552 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2025-02-12 00:03:56,012 basehttp 3880 18788 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:09:42,769 autoreload 3880 17628 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 06:09:47,969 autoreload 28256 8100 Watching for file changes with StatReloader
+INFO 2025-02-12 06:09:53,371 autoreload 28256 8100 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 06:09:56,935 autoreload 16504 6068 Watching for file changes with StatReloader
+INFO 2025-02-12 06:12:08,924 autoreload 16504 6068 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 06:12:12,694 autoreload 19848 10368 Watching for file changes with StatReloader
+INFO 2025-02-12 06:12:27,739 autoreload 19848 10368 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 06:12:30,672 autoreload 19884 18284 Watching for file changes with StatReloader
+INFO 2025-02-12 06:18:52,368 autoreload 19884 18284 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 06:18:54,599 autoreload 7708 22940 Watching for file changes with StatReloader
+INFO 2025-02-12 06:37:04,789 basehttp 7708 25144 "GET /admin/core/notification/ HTTP/1.1" 200 14327
+INFO 2025-02-12 06:37:08,209 basehttp 7708 25144 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:37:17,700 basehttp 7708 25144 "GET /admin/core/notification/add/ HTTP/1.1" 200 15381
+INFO 2025-02-12 06:37:20,154 basehttp 7708 25144 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:37:29,638 basehttp 7708 25144 "GET /admin/users/user/ HTTP/1.1" 200 15743
+INFO 2025-02-12 06:37:33,022 basehttp 7708 25144 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:37:51,340 basehttp 7708 25144 "GET /admin/core/payment/ HTTP/1.1" 200 16944
+INFO 2025-02-12 06:37:54,118 basehttp 7708 25144 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:38:40,501 basehttp 7708 25144 "GET /admin/core/payment/11/change/ HTTP/1.1" 200 21321
+INFO 2025-02-12 06:38:43,281 basehttp 7708 25144 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:39:14,214 basehttp 7708 25144 "GET /admin/core/payment/ HTTP/1.1" 200 16944
+INFO 2025-02-12 06:39:16,918 basehttp 7708 25144 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:51:35,931 basehttp 7708 2384 "GET /admin/core/notification/ HTTP/1.1" 200 14327
+INFO 2025-02-12 06:51:40,000 basehttp 7708 2384 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:51:47,085 basehttp 7708 2384 "GET /admin/core/notification/add/ HTTP/1.1" 200 15381
+INFO 2025-02-12 06:51:52,294 basehttp 7708 2384 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:53:32,711 autoreload 7708 22940 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 06:53:51,494 autoreload 17028 16856 Watching for file changes with StatReloader
+INFO 2025-02-12 06:54:43,479 autoreload 17028 16856 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 06:54:46,572 autoreload 26312 3136 Watching for file changes with StatReloader
+INFO 2025-02-12 06:55:01,105 basehttp 26312 26348 "GET /admin/core/notification/add/ HTTP/1.1" 200 15381
+INFO 2025-02-12 06:55:03,759 basehttp 26312 26348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:55:17,012 basehttp 26312 26348 "GET /admin/core/notification/add/ HTTP/1.1" 200 15381
+INFO 2025-02-12 06:55:19,539 basehttp 26312 26348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:56:04,730 basehttp 26312 26348 "GET /admin/core/notification/add/ HTTP/1.1" 200 15381
+INFO 2025-02-12 06:56:09,224 basehttp 26312 26348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:57:13,696 basehttp 26312 26348 "GET /admin/core/notification/ HTTP/1.1" 200 14563
+INFO 2025-02-12 06:57:16,521 basehttp 26312 26348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:57:34,512 basehttp 26312 26348 "GET /admin/core/notification/add/ HTTP/1.1" 200 15381
+INFO 2025-02-12 06:57:36,963 basehttp 26312 26348 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 06:57:46,763 basehttp 26312 26348 "GET /admin/core/notification/ HTTP/1.1" 200 14563
+INFO 2025-02-12 07:01:16,354 autoreload 26312 3136 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 07:01:19,643 autoreload 26528 22216 Watching for file changes with StatReloader
+INFO 2025-02-12 07:01:32,380 autoreload 26528 22216 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 07:01:35,783 autoreload 24584 16844 Watching for file changes with StatReloader
+INFO 2025-02-12 07:01:54,293 basehttp 24584 21304 "GET /admin/core/notification/ HTTP/1.1" 200 14327
+INFO 2025-02-12 07:01:56,647 basehttp 24584 21304 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 07:02:09,381 basehttp 24584 21304 "GET /admin/core/notification/add/ HTTP/1.1" 200 15076
+INFO 2025-02-12 07:02:12,960 basehttp 24584 21304 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-02-12 07:03:03,323 log 24584 21304 Internal Server Error: /admin/users/user/
+Traceback (most recent call last):
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 244, in _get_session
+    return self._session_cache
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "dpg-cue7tm52ng1s7384dpsg-a.oregon-postgres.render.com" (35.227.164.209), port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\admin\options.py", line 718, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\admin\sites.py", line 229, in inner
+    if not self.has_permission(request):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\admin\sites.py", line 202, in has_permission
+    return request.user.is_active and request.user.is_staff
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\auth\middleware.py", line 37, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\auth\middleware.py", line 17, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 209, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 62, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in load
+    s = self._get_session_from_db()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\sessions\backends\db.py", line 34, in _get_session_from_db
+    return self.model.objects.get(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\models\query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\models\query.py", line 382, in __len__
+    self._fetch_all()
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\models\query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in execute_sql
+    cursor = self.connection.cursor()
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\backends\base\base.py", line 320, in cursor
+    return self._cursor()
+           ^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\backends\base\base.py", line 296, in _cursor
+    self.ensure_connection()
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\backends\base\base.py", line 278, in ensure_connection
+    with self.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\backends\base\base.py", line 279, in ensure_connection
+    self.connect()
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\backends\base\base.py", line 256, in connect
+    self.connection = self.get_new_connection(conn_params)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\utils\asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\db\backends\postgresql\base.py", line 332, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\psycopg2\__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: connection to server at "dpg-cue7tm52ng1s7384dpsg-a.oregon-postgres.render.com" (35.227.164.209), port 5432 failed: Connection timed out (0x0000274C/10060)
+	Is the server running on that host and accepting TCP/IP connections?
+
+ERROR 2025-02-12 07:03:03,597 basehttp 24584 21304 "GET /admin/users/user/ HTTP/1.1" 500 252061
+INFO 2025-02-12 07:03:11,186 basehttp 24584 21304 "GET /admin/users/user/ HTTP/1.1" 200 15743
+INFO 2025-02-12 07:03:13,608 basehttp 24584 21304 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 07:04:35,876 autoreload 24584 16844 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 07:04:38,971 autoreload 12820 23368 Watching for file changes with StatReloader
+INFO 2025-02-12 07:04:48,835 autoreload 12820 23368 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 07:04:52,149 autoreload 24592 25216 Watching for file changes with StatReloader
+INFO 2025-02-12 07:05:02,698 basehttp 24592 8552 "GET /admin/core/notification/add/ HTTP/1.1" 200 15091
+INFO 2025-02-12 07:05:06,621 basehttp 24592 8552 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-12 07:07:02,004 autoreload 24592 25216 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 07:07:05,464 autoreload 7584 20504 Watching for file changes with StatReloader
+INFO 2025-02-12 07:07:15,756 autoreload 7584 20504 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-12 07:07:18,732 autoreload 20684 28128 Watching for file changes with StatReloader
+INFO 2025-02-12 09:41:48,574 autoreload 20684 28128 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-12 09:41:53,159 autoreload 7612 24884 Watching for file changes with StatReloader
+INFO 2025-02-12 09:42:07,801 autoreload 7612 24884 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-12 09:42:09,322 autoreload 27744 19452 Watching for file changes with StatReloader
+INFO 2025-02-12 09:42:11,475 autoreload 27744 19452 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-12 09:42:12,803 autoreload 5164 25636 Watching for file changes with StatReloader
+INFO 2025-02-12 09:42:19,117 autoreload 5164 25636 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-12 09:42:20,632 autoreload 10608 20108 Watching for file changes with StatReloader
+INFO 2025-02-12 09:42:23,765 autoreload 10608 20108 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-12 09:42:25,230 autoreload 16168 17384 Watching for file changes with StatReloader
+INFO 2025-02-12 09:44:18,597 autoreload 16168 17384 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-12 09:44:19,683 autoreload 16176 18296 Watching for file changes with StatReloader
+INFO 2025-02-12 09:47:08,120 autoreload 16176 18296 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-12 09:47:09,143 autoreload 7812 24748 Watching for file changes with StatReloader
+INFO 2025-02-12 09:48:33,059 autoreload 7812 24748 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-12 09:48:34,151 autoreload 10744 27868 Watching for file changes with StatReloader
+INFO 2025-02-12 09:51:29,595 autoreload 10744 27868 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-12 09:51:31,767 autoreload 27328 18812 Watching for file changes with StatReloader
+INFO 2025-02-12 09:52:10,928 autoreload 27328 18812 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-12 09:52:12,047 autoreload 17900 7620 Watching for file changes with StatReloader
+INFO 2025-02-12 09:52:23,626 autoreload 17900 7620 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-12 09:52:24,747 autoreload 25940 27544 Watching for file changes with StatReloader
+INFO 2025-02-12 09:52:26,802 autoreload 25940 27544 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-12 09:52:27,972 autoreload 16284 18168 Watching for file changes with StatReloader
+INFO 2025-02-12 09:52:43,753 autoreload 16284 18168 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.

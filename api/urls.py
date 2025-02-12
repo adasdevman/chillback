@@ -1,18 +1,24 @@
-from django.urls import path
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import (
     login_view, register_view, register_annonceur_view,
     profile_view, CategorieList, AnnonceList, AnnonceDetail,
     create_payment, payment_history, CinetPayWebhookView,
     check_email, mes_annonces, mes_tickets, mes_chills,
-    NotificationViewSet
+    NotificationViewSet,
+    AnnonceViewSet,
+    CategorieViewSet,
+    SousCategorieViewSet,
+    PaymentViewSet,
 )
 
 app_name = 'api'
 
+# Create a router and register our viewsets with it
 router = DefaultRouter()
-router.register(r'notifications', NotificationViewSet, basename='notification')
+router.register('notifications', NotificationViewSet, basename='notification')
 
+# First create the base URL patterns
 urlpatterns = [
     path('auth/login/', login_view, name='login'),
     path('auth/register/', register_view, name='register'),
@@ -26,8 +32,9 @@ urlpatterns = [
     path('payments/webhook/cinetpay/', CinetPayWebhookView.as_view(), name='cinetpay-webhook'),
     path('auth/check-email/', check_email, name='check-email'),
     path('annonces/mes-annonces/', mes_annonces, name='mes-annonces'),
-    path('annonces/mes-tickets/', mes_tickets, name='mes-tickets'),
-    path('annonces/mes-chills/', mes_chills, name='mes-chills'),
+    path('payments/mes-tickets/', PaymentViewSet.as_view({'get': 'mes_tickets'}), name='mes-tickets'),
+    path('payments/mes-chills/', PaymentViewSet.as_view({'get': 'mes_chills'}), name='mes-chills'),
 ]
 
-urlpatterns += router.urls
+# Then extend the urlpatterns with the router URLs
+urlpatterns.extend(router.urls)

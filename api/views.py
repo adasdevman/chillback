@@ -28,7 +28,7 @@ from users.serializers import UserProfileSerializer
 from django.core.exceptions import ValidationError
 import logging
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.viewsets import ReadOnlyModelViewSet, ModelViewSet
 from rest_framework.decorators import action
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
@@ -424,7 +424,7 @@ def mes_chills(request):
             status=500
         )
 
-class NotificationViewSet(ReadOnlyModelViewSet):
+class NotificationViewSet(ModelViewSet):
     serializer_class = NotificationSerializer
     
     def get_queryset(self):
@@ -436,4 +436,72 @@ class NotificationViewSet(ReadOnlyModelViewSet):
         return Response({'count': count})
     
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user) 
+        serializer.save(user=self.request.user)
+
+    @action(detail=False, methods=['POST'])
+    def send_to_role(self, request):
+        """Envoyer une notification à tous les utilisateurs d'un rôle spécifique"""
+        if not request.user.is_staff:
+            return Response(
+                {"error": "Permission refusée"},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        role = request.data.get('role')
+        title = request.data.get('title')
+        message = request.data.get('message')
+
+        if not all([role, title, message]):
+            return Response(
+                {"error": "role, title et message sont requis"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            notifications = Notification.send_to_role(role, title, message)
+            return Response({
+                "message": f"{len(notifications)} notifications envoyées",
+                "role": role
+            })
+        except Exception as e:
+            return Response(
+                {"error": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+    @action(detail=False, methods=['POST'])
+    def send_to_all(self, request):
+        """Envoyer une notification à tous les utilisateurs"""
+        if not request.user.is_staff:
+            return Response(
+                {"error": "Permission refusée"},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        title = request.data.get('title')
+        message = request.data.get('message')
+
+        if not all([title, message]):
+            return Response(
+                {"error": "title et message sont requis"},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        try:
+            notifications = Notification.send_to_all(title, message)
+            return Response({
+                "message": f"{len(notifications)} notifications envoyées"
+            })
+        except Exception as e:
+            return Response(
+                {"error": str(e)},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
+    @action(detail=True, methods=['PATCH'])
+    def mark_as_read(self, request, pk=None):
+        """Marquer une notification comme lue"""
+        notification = self.get_object()
+        notification.is_read = True
+        notification.save()
+        return Response({"status": "success"})

@@ -21,6 +21,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import viewsets
 
 logger = logging.getLogger(__name__)
 
@@ -585,3 +586,26 @@ def annonces_par_categorie(request):
         
     serializer = AnnonceListSerializer(annonces, many=True)
     return Response(serializer.data)
+
+class PaymentViewSet(viewsets.ModelViewSet):
+    queryset = Payment.objects.all()
+    serializer_class = PaymentSerializer
+    permission_classes = [IsAuthenticated]
+
+    def mes_tickets(self, request):
+        """Récupère tous les paiements de type 'ticket' de l'utilisateur"""
+        payments = Payment.objects.filter(
+            user=request.user,
+            payment_type='ticket'
+        ).select_related('annonce').order_by('-created')
+        serializer = PaymentSerializer(payments, many=True)
+        return Response(serializer.data)
+
+    def mes_chills(self, request):
+        """Récupère tous les paiements de type 'reservation' de l'utilisateur"""
+        payments = Payment.objects.filter(
+            user=request.user,
+            payment_type='reservation'
+        ).select_related('annonce').order_by('-created')
+        serializer = PaymentSerializer(payments, many=True)
+        return Response(serializer.data)

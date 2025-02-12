@@ -12,4 +12,22 @@ class Notification(TimeStampedModel):
         ordering = ['-created']
 
     def __str__(self):
-        return f"{self.title} - {self.user.email}" 
+        return f"{self.title} - {self.user.email}"
+
+    @classmethod
+    def send_to_users(cls, users, title, message):
+        notifications = [
+            cls(user=user, title=title, message=message)
+            for user in users
+        ]
+        return cls.objects.bulk_create(notifications)
+
+    @classmethod
+    def send_to_role(cls, role, title, message):
+        users = User.objects.filter(role=role)
+        return cls.send_to_users(users, title, message)
+
+    @classmethod
+    def send_to_all(cls, title, message):
+        users = User.objects.all()
+        return cls.send_to_users(users, title, message)
