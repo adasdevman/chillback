@@ -14679,3 +14679,24 @@ INFO 2025-02-12 09:52:43,753 autoreload 16284 18168 C:\Users\Nevada Man\CascadeP
 INFO 2025-02-12 09:52:44,743 autoreload 22796 25860 Watching for file changes with StatReloader
 INFO 2025-02-12 10:08:39,360 autoreload 22796 25860 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
 INFO 2025-02-12 10:08:44,831 autoreload 3252 23628 Watching for file changes with StatReloader
+INFO 2025-02-13 04:40:56,456 basehttp 3252 15184 "GET /admin/core/payment/ HTTP/1.1" 200 18783
+INFO 2025-02-13 04:40:59,796 basehttp 3252 15184 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 04:41:14,937 basehttp 3252 15184 "POST /admin/core/payment/ HTTP/1.1" 200 11483
+INFO 2025-02-13 04:41:15,206 basehttp 3252 15184 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-02-13 04:41:21,832 basehttp 3252 15184 "POST /admin/core/payment/ HTTP/1.1" 302 0
+INFO 2025-02-13 04:41:25,446 basehttp 3252 15184 "GET /admin/core/payment/ HTTP/1.1" 200 12615
+INFO 2025-02-13 04:41:27,802 basehttp 3252 15184 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 04:41:33,524 basehttp 3252 15184 "GET /admin/users/user/ HTTP/1.1" 200 15743
+INFO 2025-02-13 04:41:35,622 basehttp 3252 15184 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 05:16:30,966 basehttp 3252 17328 "GET /admin/core/payment/ HTTP/1.1" 200 16387
+INFO 2025-02-13 05:16:33,350 basehttp 3252 17328 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 05:17:02,981 basehttp 3252 17328 "GET /admin/core/payment/26/change/ HTTP/1.1" 200 21330
+INFO 2025-02-13 05:17:05,290 basehttp 3252 17328 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 05:17:22,398 basehttp 3252 17328 "POST /admin/core/payment/26/change/ HTTP/1.1" 302 0
+INFO 2025-02-13 05:17:29,530 basehttp 3252 17328 "GET /admin/core/payment/ HTTP/1.1" 200 16656
+INFO 2025-02-13 05:17:31,722 basehttp 3252 17328 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 05:18:27,581 basehttp 3252 17328 "GET /admin/core/payment/25/change/ HTTP/1.1" 200 21330
+INFO 2025-02-13 05:18:29,667 basehttp 3252 17328 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 05:18:45,249 basehttp 3252 17328 "POST /admin/core/payment/25/change/ HTTP/1.1" 302 0
+INFO 2025-02-13 05:18:52,419 basehttp 3252 17328 "GET /admin/core/payment/ HTTP/1.1" 200 16667
+INFO 2025-02-13 05:18:54,536 basehttp 3252 17328 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
