@@ -14,6 +14,8 @@ from .models import (
     Payment,
     Notification
 )
+from django.urls import reverse
+import uuid
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
@@ -94,23 +96,36 @@ class AnnonceAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ['user', 'annonce', 'amount', 'status', 'payment_type', 'created']
-    list_filter = ['status', 'payment_type', 'created']
-    search_fields = ['user__email', 'transaction_id', 'description']
-    readonly_fields = ['created', 'modified']
-    date_hierarchy = 'created'
+    list_display = ('transaction_id', 'user', 'get_annonce_title', 'amount', 'status', 'payment_type', 'created')
+    list_filter = ('status', 'payment_type', 'created')
+    search_fields = ('transaction_id', 'user__email', 'annonce__titre')
+    readonly_fields = ('created', 'modified', 'transaction_id')
+    ordering = ('-created',)
     
     fieldsets = (
         ('Informations principales', {
-            'fields': ('user', 'annonce', 'amount', 'description')
+            'fields': ('user', 'annonce', 'tarif', 'amount', 'status', 'payment_type')
         }),
-        ('État du paiement', {
-            'fields': ('status', 'payment_type', 'transaction_id')
+        ('Transaction', {
+            'fields': ('transaction_id', 'description')
         }),
-        ('Dates', {
+        ('Métadonnées', {
             'fields': ('created', 'modified')
         }),
     )
+
+    def get_annonce_title(self, obj):
+        if obj.annonce:
+            return format_html('<a href="{}">{}</a>',
+                reverse('admin:core_annonce_change', args=[obj.annonce.id]),
+                obj.annonce.titre)
+        return "N/A"
+    get_annonce_title.short_description = "Annonce"
+
+    def save_model(self, request, obj, form, change):
+        if not obj.transaction_id:
+            obj.transaction_id = f"TR-{str(uuid.uuid4())[:8]}"
+        super().save_model(request, obj, form, change)
 
 class NotificationForm(forms.ModelForm):
     TARGET_CHOICES = [

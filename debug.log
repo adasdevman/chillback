@@ -14700,3 +14700,277 @@ INFO 2025-02-13 05:18:29,667 basehttp 3252 17328 "GET /admin/jsi18n/ HTTP/1.1" 2
 INFO 2025-02-13 05:18:45,249 basehttp 3252 17328 "POST /admin/core/payment/25/change/ HTTP/1.1" 302 0
 INFO 2025-02-13 05:18:52,419 basehttp 3252 17328 "GET /admin/core/payment/ HTTP/1.1" 200 16667
 INFO 2025-02-13 05:18:54,536 basehttp 3252 17328 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:21:30,029 autoreload 21900 11560 Watching for file changes with StatReloader
+INFO 2025-02-13 12:21:37,580 basehttp 21900 27552 "GET / HTTP/1.1" 302 0
+INFO 2025-02-13 12:21:41,955 basehttp 21900 27552 "GET /dashboard/ HTTP/1.1" 200 8930
+INFO 2025-02-13 12:21:42,479 basehttp 21900 27552 "GET /static/css/dashboard.css HTTP/1.1" 200 17121
+INFO 2025-02-13 12:21:42,505 basehttp 21900 16416 "GET /static/images/Chillnow%20logo%201.png HTTP/1.1" 200 12694
+WARNING 2025-02-13 12:21:42,850 log 21900 16416 Not Found: /favicon.ico
+WARNING 2025-02-13 12:21:42,851 basehttp 21900 16416 "GET /favicon.ico HTTP/1.1" 404 2839
+INFO 2025-02-13 12:21:56,157 basehttp 21900 7164 "GET /dashboard/annonces/ HTTP/1.1" 200 20616
+INFO 2025-02-13 12:22:03,803 basehttp 21900 7164 "GET /dashboard/payments/ HTTP/1.1" 200 16795
+INFO 2025-02-13 12:24:47,112 autoreload 21900 11560 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 12:24:51,827 autoreload 19288 3388 Watching for file changes with StatReloader
+INFO 2025-02-13 12:24:59,464 autoreload 19288 3388 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 12:25:00,379 autoreload 27608 10416 Watching for file changes with StatReloader
+INFO 2025-02-13 12:25:09,054 basehttp 27608 5128 "GET /dashboard/payments/ HTTP/1.1" 200 16795
+INFO 2025-02-13 12:26:34,349 autoreload 7868 7404 Watching for file changes with StatReloader
+INFO 2025-02-13 12:27:00,499 basehttp 27608 5128 "GET /admin/ HTTP/1.1" 200 13713
+INFO 2025-02-13 12:27:00,711 basehttp 7868 12540 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-02-13 12:27:00,743 basehttp 27608 5128 "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2025-02-13 12:27:00,769 basehttp 7868 9696 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2025-02-13 12:27:00,769 basehttp 7868 18780 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-02-13 12:27:00,770 basehttp 7868 4616 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-02-13 12:27:00,870 basehttp 7868 12944 "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2025-02-13 12:27:01,425 basehttp 7868 12944 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-02-13 12:27:01,440 basehttp 7868 18780 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-02-13 12:27:01,440 basehttp 7868 4616 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-02-13 12:27:01,440 basehttp 7868 9696 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-02-13 12:27:10,926 basehttp 7868 4616 "GET /admin/core/payment/ HTTP/1.1" 200 16671
+INFO 2025-02-13 12:27:10,940 basehttp 7868 12944 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-02-13 12:27:11,003 basehttp 27608 5128 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-02-13 12:27:11,003 basehttp 7868 4616 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-02-13 12:27:11,004 basehttp 7868 12944 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-02-13 12:27:11,287 basehttp 7868 12540 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2025-02-13 12:27:11,323 basehttp 27608 5128 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-02-13 12:27:11,377 basehttp 7868 12944 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-02-13 12:27:11,380 basehttp 7868 18780 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-02-13 12:27:11,479 basehttp 7868 4616 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-02-13 12:27:11,847 basehttp 7868 12540 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-02-13 12:27:12,159 basehttp 7868 4616 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-02-13 12:27:12,826 basehttp 7868 9696 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:27:12,884 basehttp 7868 9696 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-02-13 12:27:12,898 basehttp 7868 12540 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-02-13 12:27:12,937 basehttp 7868 4616 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-02-13 12:29:59,357 autoreload 27608 10416 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 12:30:00,265 autoreload 21472 15940 Watching for file changes with StatReloader
+INFO 2025-02-13 12:30:09,327 autoreload 6636 16156 Watching for file changes with StatReloader
+INFO 2025-02-13 12:30:23,630 basehttp 6636 14152 "GET /admin/core/payment/ HTTP/1.1" 200 16708
+INFO 2025-02-13 12:30:25,498 basehttp 6636 14152 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:31:03,348 basehttp 21472 3232 "GET /admin/core/payment/26/change/ HTTP/1.1" 200 21330
+INFO 2025-02-13 12:31:03,452 basehttp 21472 3232 "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2025-02-13 12:31:03,454 basehttp 21472 25212 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-02-13 12:31:03,457 basehttp 21472 25212 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2025-02-13 12:31:03,473 basehttp 21472 25212 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-02-13 12:31:05,217 basehttp 21472 4144 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:31:33,984 autoreload 21472 15940 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 12:31:34,895 autoreload 12536 17392 Watching for file changes with StatReloader
+INFO 2025-02-13 12:33:21,627 autoreload 12536 17392 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 12:33:22,561 autoreload 4416 1560 Watching for file changes with StatReloader
+INFO 2025-02-13 12:33:40,573 autoreload 4416 1560 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\payment.py changed, reloading.
+INFO 2025-02-13 12:33:41,501 autoreload 27308 13084 Watching for file changes with StatReloader
+INFO 2025-02-13 12:34:36,887 autoreload 27308 13084 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 12:34:37,806 autoreload 16780 15636 Watching for file changes with StatReloader
+INFO 2025-02-13 12:34:40,284 autoreload 1432 28100 Watching for file changes with StatReloader
+INFO 2025-02-13 12:35:20,987 basehttp 16780 25224 "GET /admin/core/payment/26/change/ HTTP/1.1" 200 25586
+INFO 2025-02-13 12:35:23,038 basehttp 16780 25224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:35:39,298 basehttp 16780 25224 "GET /admin/core/payment/ HTTP/1.1" 200 16616
+INFO 2025-02-13 12:35:41,183 basehttp 16780 25224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:35:54,102 basehttp 16780 25224 "POST /admin/core/payment/ HTTP/1.1" 200 10720
+INFO 2025-02-13 12:35:54,173 basehttp 16780 25224 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-02-13 12:35:59,992 basehttp 16780 25224 "POST /admin/core/payment/ HTTP/1.1" 302 0
+INFO 2025-02-13 12:36:03,319 basehttp 16780 25224 "GET /admin/core/payment/ HTTP/1.1" 200 12615
+INFO 2025-02-13 12:36:05,153 basehttp 16780 25224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:36:05,183 basehttp 16780 25224 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-02-13 12:36:49,550 basehttp 16780 25224 "GET /dashboard/ HTTP/1.1" 200 8890
+INFO 2025-02-13 12:36:59,383 basehttp 16780 25224 "GET /dashboard/payments/ HTTP/1.1" 200 6332
+INFO 2025-02-13 12:38:51,578 autoreload 16780 15636 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 12:38:52,530 autoreload 26320 26880 Watching for file changes with StatReloader
+INFO 2025-02-13 12:39:08,380 autoreload 26320 26880 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\payment.py changed, reloading.
+INFO 2025-02-13 12:39:09,560 autoreload 9236 16328 Watching for file changes with StatReloader
+INFO 2025-02-13 12:47:05,059 basehttp 9236 25384 "GET /dashboard/payments/ HTTP/1.1" 200 6332
+INFO 2025-02-13 12:47:32,404 basehttp 9236 25384 "GET /dashboard/payments/ HTTP/1.1" 200 9721
+INFO 2025-02-13 12:47:38,647 basehttp 9236 25384 "GET /dashboard/payments/27/ HTTP/1.1" 200 9033
+INFO 2025-02-13 12:47:52,392 basehttp 9236 25384 "GET /dashboard/payments/ HTTP/1.1" 200 9721
+INFO 2025-02-13 12:49:11,971 basehttp 9236 25384 "GET /admin/ HTTP/1.1" 200 13703
+INFO 2025-02-13 12:49:17,977 basehttp 9236 25384 "GET /admin/core/payment/ HTTP/1.1" 200 15363
+INFO 2025-02-13 12:49:19,838 basehttp 9236 25384 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:49:26,739 autoreload 9236 16328 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-13 12:49:27,685 autoreload 27812 27532 Watching for file changes with StatReloader
+INFO 2025-02-13 12:49:35,473 autoreload 27812 27532 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-13 12:49:36,388 autoreload 9932 22368 Watching for file changes with StatReloader
+INFO 2025-02-13 12:50:02,947 basehttp 9932 15796 "GET /admin/core/payment/27/change/ HTTP/1.1" 200 25496
+INFO 2025-02-13 12:50:04,878 basehttp 9932 15796 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:50:17,569 autoreload 9932 22368 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\payment.py changed, reloading.
+INFO 2025-02-13 12:50:18,467 autoreload 22768 22968 Watching for file changes with StatReloader
+INFO 2025-02-13 12:50:20,414 autoreload 22768 22968 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\payment.py changed, reloading.
+INFO 2025-02-13 12:50:21,944 autoreload 8260 4588 Watching for file changes with StatReloader
+INFO 2025-02-13 12:51:53,834 autoreload 8260 4588 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\urls.py changed, reloading.
+INFO 2025-02-13 12:51:54,688 autoreload 2588 7812 Watching for file changes with StatReloader
+INFO 2025-02-13 12:52:06,239 autoreload 2588 7812 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-13 12:52:07,113 autoreload 17660 18804 Watching for file changes with StatReloader
+INFO 2025-02-13 12:52:32,545 autoreload 17660 18804 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 12:52:33,431 autoreload 25784 25424 Watching for file changes with StatReloader
+INFO 2025-02-13 12:52:35,149 autoreload 25784 25424 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 12:52:36,083 autoreload 15228 25624 Watching for file changes with StatReloader
+INFO 2025-02-13 12:52:47,613 autoreload 15228 25624 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\payment.py changed, reloading.
+INFO 2025-02-13 12:52:48,569 autoreload 28332 24028 Watching for file changes with StatReloader
+INFO 2025-02-13 12:52:54,525 basehttp 28332 4108 "GET /admin/core/payment/ HTTP/1.1" 200 15211
+INFO 2025-02-13 12:52:56,382 basehttp 28332 4108 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:53:23,994 basehttp 28332 4108 "GET /admin/core/payment/27/change/ HTTP/1.1" 200 24936
+INFO 2025-02-13 12:53:25,869 basehttp 28332 4108 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:54:40,099 basehttp 28332 4108 "GET /admin/core/payment/27/delete/ HTTP/1.1" 200 10327
+INFO 2025-02-13 12:54:44,544 basehttp 28332 4108 "POST /admin/core/payment/27/delete/ HTTP/1.1" 302 0
+INFO 2025-02-13 12:54:47,215 basehttp 28332 4108 "GET /admin/core/payment/ HTTP/1.1" 200 12648
+INFO 2025-02-13 12:54:49,134 basehttp 28332 4108 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-02-13 12:54:50,641 log 28332 4108 Not Found: /dashboard/payments/
+WARNING 2025-02-13 12:54:50,642 basehttp 28332 4108 "GET /dashboard/payments/ HTTP/1.1" 404 7832
+WARNING 2025-02-13 12:54:56,595 log 28332 4108 Not Found: /dashboard/payments/
+WARNING 2025-02-13 12:54:56,596 basehttp 28332 4108 "GET /dashboard/payments/ HTTP/1.1" 404 7832
+ERROR 2025-02-13 12:55:16,134 log 28332 4108 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py", line 44, in dashboard_home
+    return render(request, 'dashboard/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'payments' not found. 'payments' is not a valid view function or pattern name.
+ERROR 2025-02-13 12:55:16,145 basehttp 28332 4108 "GET /dashboard/ HTTP/1.1" 500 174176
+ERROR 2025-02-13 12:55:35,960 log 28332 4108 Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py", line 44, in dashboard_home
+    return render(request, 'dashboard/home.html', context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Nevada Man\CascadeProjects\chillnow\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'payments' not found. 'payments' is not a valid view function or pattern name.
+ERROR 2025-02-13 12:55:35,974 basehttp 28332 4108 "GET /dashboard/ HTTP/1.1" 500 174313
+INFO 2025-02-13 12:56:00,041 autoreload 28332 24028 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\urls.py changed, reloading.
+INFO 2025-02-13 12:56:00,929 autoreload 4112 4608 Watching for file changes with StatReloader
+INFO 2025-02-13 12:56:16,722 autoreload 4112 4608 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\urls.py changed, reloading.
+INFO 2025-02-13 12:56:17,624 autoreload 18516 17016 Watching for file changes with StatReloader
+INFO 2025-02-13 12:56:23,704 basehttp 18516 14188 "GET /dashboard/ HTTP/1.1" 200 8890
+INFO 2025-02-13 12:56:30,000 basehttp 18516 14188 "GET /dashboard/payments/ HTTP/1.1" 200 6332
+INFO 2025-02-13 12:57:19,643 basehttp 18516 14188 "GET /dashboard/payments/ HTTP/1.1" 200 9721
+INFO 2025-02-13 12:57:27,289 basehttp 18516 14188 "GET /admin/core/payment/ HTTP/1.1" 200 15211
+INFO 2025-02-13 12:57:29,170 basehttp 18516 14188 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 12:57:56,752 basehttp 18516 14188 "GET /admin/core/payment/28/change/ HTTP/1.1" 200 24936
+INFO 2025-02-13 12:57:58,588 basehttp 18516 14188 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:01:00,509 basehttp 18516 14188 "GET /admin/core/payment/ HTTP/1.1" 200 15211
+INFO 2025-02-13 13:01:02,554 basehttp 18516 14188 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:05:29,386 basehttp 18516 14188 "GET /admin/core/payment/28/change/ HTTP/1.1" 200 24936
+INFO 2025-02-13 13:05:31,275 basehttp 18516 14188 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:06:49,192 basehttp 18516 14188 "POST /admin/core/payment/28/change/ HTTP/1.1" 302 0
+INFO 2025-02-13 13:06:52,059 basehttp 18516 14188 "GET /admin/core/payment/ HTTP/1.1" 200 15513
+INFO 2025-02-13 13:06:53,935 basehttp 18516 14188 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:18:50,302 basehttp 18516 25760 "GET /admin/core/payment/ HTTP/1.1" 200 15894
+INFO 2025-02-13 13:18:52,158 basehttp 18516 25760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:19:16,761 basehttp 18516 25760 "GET /admin/core/payment/29/change/ HTTP/1.1" 200 24936
+INFO 2025-02-13 13:19:18,634 basehttp 18516 25760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:19:27,948 basehttp 18516 25760 "POST /admin/core/payment/29/change/ HTTP/1.1" 302 0
+INFO 2025-02-13 13:19:31,043 basehttp 18516 25760 "GET /admin/core/payment/ HTTP/1.1" 200 16196
+INFO 2025-02-13 13:19:32,955 basehttp 18516 25760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342

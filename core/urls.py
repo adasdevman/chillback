@@ -30,10 +30,4 @@ urlpatterns = [
     path('api/categories/', views.categories, name='categories'),
     path('api/annonces/filtrer/', views.annonces_par_categorie, name='annonces_par_categorie'),
     path('api/annonces/publiques/', views.annonces_publiques, name='annonces_publiques'),
-    path('api/annonces/<int:annonce_id>/', views.annonce_detail_public, name='annonce_detail_public'),
-    
-    # URLs privées pour les annonces
-    path('api/annonces/mes-annonces/', views.mes_annonces, name='mes_annonces'),
-    path('api/annonces/mes-chills/', views.mes_chills, name='mes_chills'),
-    path('api/annonces/mes-tickets/', views.mes_tickets, name='mes_tickets'),
 ] 

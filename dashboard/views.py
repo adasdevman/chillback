@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from payments.models import Payment # type: ignore
+from core.models import Payment, Categorie, Annonce
 from django.db.models import Count, Sum
-from core.models import Categorie, Annonce
 from users.models import User
 from django.db.models.functions import TruncDate
 from django.utils import timezone
@@ -14,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 @login_required
 def payment_list(request):
-    payments = Payment.objects.all().order_by('-created_at')
+    payments = Payment.objects.all().order_by('-created')
     return render(request, 'dashboard/payments/list.html', {'payments': payments})
 
 @login_required
