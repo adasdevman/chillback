@@ -58,8 +58,6 @@ class AnnonceSerializer(TimeStampedModelSerializer):
     annonceur = UserProfileSerializer(source='utilisateur', read_only=True)
     categorie = CategorieSerializer(read_only=True)
     sous_categorie = SousCategorieSerializer(read_only=True)
-    categorie_id = serializers.IntegerField(required=True)
-    sous_categorie_id = serializers.IntegerField(required=True)
 
     class Meta:
         model = Annonce
@@ -71,6 +69,22 @@ class AnnonceSerializer(TimeStampedModelSerializer):
             'created', 'modified'
         ]
         read_only_fields = ['utilisateur']
+
+    def to_internal_value(self, data):
+        # First convert the data using the parent class method
+        ret = super().to_internal_value(data)
+        
+        # Add the category IDs from the request data
+        ret['categorie_id'] = data.get('categorie_id')
+        ret['sous_categorie_id'] = data.get('sous_categorie_id')
+        
+        # Validate that they are present
+        if not ret['categorie_id']:
+            raise serializers.ValidationError({'categorie_id': 'Ce champ est obligatoire.'})
+        if not ret['sous_categorie_id']:
+            raise serializers.ValidationError({'sous_categorie_id': 'Ce champ est obligatoire.'})
+        
+        return ret
 
     def create(self, validated_data):
         # Ensure the user is set from the context
