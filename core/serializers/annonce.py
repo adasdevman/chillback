@@ -70,6 +70,22 @@ class AnnonceSerializer(TimeStampedModelSerializer):
         ]
         read_only_fields = ['utilisateur']
 
+    def validate(self, data):
+        # Ensure categorie_id and sous_categorie_id are present in the request
+        categorie_id = self.initial_data.get('categorie_id')
+        sous_categorie_id = self.initial_data.get('sous_categorie_id')
+
+        if not categorie_id:
+            raise serializers.ValidationError({'categorie_id': 'Ce champ est obligatoire.'})
+        if not sous_categorie_id:
+            raise serializers.ValidationError({'sous_categorie_id': 'Ce champ est obligatoire.'})
+
+        # Add them to the validated data
+        data['categorie_id'] = categorie_id
+        data['sous_categorie_id'] = sous_categorie_id
+
+        return data
+
     def create(self, validated_data):
         # Ensure the user is set from the context
         validated_data['utilisateur'] = self.context['request'].user

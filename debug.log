@@ -15110,3 +15110,13 @@ INFO 2025-02-23 07:40:04,034 autoreload 28220 25768 C:\Users\Nevada Man\CascadeP
 INFO 2025-02-23 07:40:06,861 autoreload 29936 39276 Watching for file changes with StatReloader
 INFO 2025-02-23 07:40:13,611 autoreload 29936 39276 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\serializers\annonce.py changed, reloading.
 INFO 2025-02-23 07:40:14,642 autoreload 40096 41212 Watching for file changes with StatReloader
+INFO 2025-02-23 07:44:44,866 autoreload 40096 41212 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\serializers\annonce.py changed, reloading.
+INFO 2025-02-23 07:44:46,294 autoreload 42664 41940 Watching for file changes with StatReloader
+INFO 2025-02-23 07:44:54,963 autoreload 42664 41940 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\serializers\annonce.py changed, reloading.
+INFO 2025-02-23 07:44:55,923 autoreload 42624 39496 Watching for file changes with StatReloader
+INFO 2025-02-23 07:45:28,412 autoreload 42624 39496 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\serializers\annonce.py changed, reloading.
+INFO 2025-02-23 07:45:29,380 autoreload 43676 43680 Watching for file changes with StatReloader
+INFO 2025-02-23 07:46:46,829 autoreload 43676 43680 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\serializers\annonce.py changed, reloading.
+INFO 2025-02-23 07:46:47,849 autoreload 44932 44936 Watching for file changes with StatReloader
+INFO 2025-02-23 07:46:58,630 autoreload 44932 44936 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\serializers\annonce.py changed, reloading.
+INFO 2025-02-23 07:47:00,087 autoreload 42972 42220 Watching for file changes with StatReloader
