@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from .base import TimeStampedModel
+import os
 
 class Categorie(models.Model):
     nom = models.CharField(max_length=50, unique=True)
@@ -120,4 +121,15 @@ class GaleriePhoto(models.Model):
         verbose_name_plural = 'Photos'
 
     def __str__(self):
-        return f"Photo pour {self.annonce.titre}" 
+        return f"Photo pour {self.annonce.titre}"
+
+    def save(self, *args, **kwargs):
+        if not self.image:
+            return
+        
+        # Créer le dossier s'il n'existe pas
+        upload_path = os.path.join(settings.MEDIA_ROOT, 'annonces/photos')
+        if not os.path.exists(upload_path):
+            os.makedirs(upload_path)
+            
+        super().save(*args, **kwargs) 

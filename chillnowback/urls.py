@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 def redirect_to_dashboard(request):
-    return redirect('dashboard:home')
+    return redirect('dashboard:index')
 
 urlpatterns = [
     path('', redirect_to_dashboard, name='root'),  # Redirection de l'URL racine
@@ -33,3 +33,5 @@ urlpatterns = [
 # Servir les fichiers media en développement
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    # Ajouter un message de log pour confirmer que les URLs média sont configurées
+    print(f"Media files will be served from {settings.MEDIA_ROOT} at URL {settings.MEDIA_URL}")

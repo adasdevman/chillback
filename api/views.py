@@ -40,6 +40,8 @@ from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import json
+import os
+from django.conf import settings
 
 logger = logging.getLogger(__name__)
 
@@ -589,11 +591,29 @@ def upload_annonce_photo(request, pk):
                 status=status.HTTP_400_BAD_REQUEST
             )
         
+        # Log des informations sur le fichier
+        image_file = request.FILES['image']
+        logger.info(f"Réception d'une image: {image_file.name}, taille: {image_file.size} bytes")
+        
+        # Vérifier le type MIME
+        if not image_file.content_type.startswith('image/'):
+            return Response(
+                {'error': 'Le fichier doit être une image'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        # Créer le dossier de destination si nécessaire
+        upload_path = os.path.join(settings.MEDIA_ROOT, 'annonces/photos')
+        if not os.path.exists(upload_path):
+            os.makedirs(upload_path)
+            logger.info(f"Création du dossier: {upload_path}")
+        
         # Créer la photo
         photo = GaleriePhoto.objects.create(
             annonce=annonce,
-            image=request.FILES['image']
+            image=image_file
         )
+        logger.info(f"Photo créée avec succès: {photo.image.name}")
         
         serializer = GaleriePhotoSerializer(photo)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
