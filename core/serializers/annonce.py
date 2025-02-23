@@ -58,6 +58,15 @@ class AnnonceSerializer(TimeStampedModelSerializer):
     annonceur = UserProfileSerializer(source='utilisateur', read_only=True)
     categorie = CategorieSerializer(read_only=True)
     sous_categorie = SousCategorieSerializer(read_only=True)
+    
+    # Explicitly declare all fields
+    titre = serializers.CharField(required=True)
+    description = serializers.CharField(required=True)
+    localisation = serializers.CharField(required=True)
+    date_evenement = serializers.DateField(required=False, allow_null=True)
+    est_actif = serializers.BooleanField(default=True)
+    categorie_id = serializers.IntegerField(required=True, write_only=True)
+    sous_categorie_id = serializers.IntegerField(required=True, write_only=True)
 
     class Meta:
         model = Annonce
@@ -70,26 +79,51 @@ class AnnonceSerializer(TimeStampedModelSerializer):
         ]
         read_only_fields = ['utilisateur']
 
-    def to_internal_value(self, data):
-        # First convert the data using the parent class method
-        ret = super().to_internal_value(data)
-        
-        # Add the category IDs from the request data
-        ret['categorie_id'] = data.get('categorie_id')
-        ret['sous_categorie_id'] = data.get('sous_categorie_id')
-        
-        # Validate that they are present
-        if not ret['categorie_id']:
-            raise serializers.ValidationError({'categorie_id': 'Ce champ est obligatoire.'})
-        if not ret['sous_categorie_id']:
-            raise serializers.ValidationError({'sous_categorie_id': 'Ce champ est obligatoire.'})
-        
-        return ret
+    def validate(self, data):
+        # Validate that the category exists
+        try:
+            categorie = Categorie.objects.get(id=data['categorie_id'])
+        except Categorie.DoesNotExist:
+            raise serializers.ValidationError({'categorie_id': 'Catégorie invalide'})
+
+        # Validate that the subcategory exists and belongs to the category
+        try:
+            sous_categorie = SousCategorie.objects.get(
+                id=data['sous_categorie_id'],
+                categorie=categorie
+            )
+        except SousCategorie.DoesNotExist:
+            raise serializers.ValidationError({'sous_categorie_id': 'Sous-catégorie invalide'})
+
+        return data
 
     def create(self, validated_data):
         # Ensure the user is set from the context
         validated_data['utilisateur'] = self.context['request'].user
-        return super().create(validated_data)
+        
+        # Create the instance
+        instance = super().create(validated_data)
+        
+        # Handle horaires if present in the initial data
+        horaires_data = self.initial_data.get('horaires', [])
+        for horaire_data in horaires_data:
+            Horaire.objects.create(
+                annonce=instance,
+                jour=horaire_data['jour'],
+                heure_ouverture=horaire_data['heure_ouverture'],
+                heure_fermeture=horaire_data['heure_fermeture']
+            )
+        
+        # Handle tarifs if present in the initial data
+        tarifs_data = self.initial_data.get('tarifs', [])
+        for tarif_data in tarifs_data:
+            Tarif.objects.create(
+                annonce=instance,
+                nom=tarif_data['nom'],
+                prix=tarif_data['prix']
+            )
+        
+        return instance
 
 class AnnonceDetailSerializer(TimeStampedModelSerializer):
     categorie = CategorieSerializer(read_only=True)
