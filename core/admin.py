@@ -47,16 +47,14 @@ class CustomUserAdmin(UserAdmin):
 
 @admin.register(Categorie)
 class CategorieAdmin(admin.ModelAdmin):
-    list_display = ['nom', 'description', 'ordre']
-    search_fields = ['nom']
-    ordering = ['ordre', 'nom']
+    list_display = ('nom', 'ordre')
+    search_fields = ('nom',)
 
 @admin.register(SousCategorie)
 class SousCategorieAdmin(admin.ModelAdmin):
-    list_display = ['nom', 'categorie', 'description', 'ordre']
-    list_filter = ['categorie']
-    search_fields = ['nom', 'categorie__nom']
-    ordering = ['categorie', 'ordre', 'nom']
+    list_display = ('nom', 'categorie', 'ordre')
+    list_filter = ('categorie',)
+    search_fields = ('nom',)
 
 class HoraireInline(admin.TabularInline):
     model = Horaire
@@ -72,13 +70,10 @@ class GaleriePhotoInline(admin.TabularInline):
 
 @admin.register(Annonce)
 class AnnonceAdmin(admin.ModelAdmin):
-    list_display = ['titre', 'categorie', 'sous_categorie', 'utilisateur', 'date_evenement', 'est_actif', 'created']
-    list_filter = ['categorie', 'sous_categorie', 'est_actif', 'date_evenement', 'created']
-    search_fields = ['titre', 'description', 'localisation', 'utilisateur__email']
-    date_hierarchy = 'created'
-    inlines = [HoraireInline, TarifInline, GaleriePhotoInline]
-    readonly_fields = ['created', 'modified']
-    
+    list_display = ('titre', 'categorie', 'sous_categorie', 'utilisateur', 'est_actif', 'status', 'created')
+    list_filter = ('categorie', 'sous_categorie', 'est_actif', 'status')
+    search_fields = ('titre', 'description', 'localisation')
+    readonly_fields = ('created', 'modified')
     fieldsets = (
         ('Informations principales', {
             'fields': ('titre', 'description', 'localisation', 'utilisateur')
@@ -86,12 +81,13 @@ class AnnonceAdmin(admin.ModelAdmin):
         ('Catégorisation', {
             'fields': ('categorie', 'sous_categorie')
         }),
-        ('Dates', {
-            'fields': ('date_evenement', 'created', 'modified')
-        }),
         ('État', {
-            'fields': ('est_actif',)
+            'fields': ('est_actif', 'status', 'date_evenement')
         }),
+        ('Métadonnées', {
+            'fields': ('created', 'modified'),
+            'classes': ('collapse',)
+        })
     )
 
 @admin.register(Payment)
@@ -206,3 +202,18 @@ class NotificationAdmin(admin.ModelAdmin):
         )
 
 admin.site.register(Preference)
+
+@admin.register(Horaire)
+class HoraireAdmin(admin.ModelAdmin):
+    list_display = ('annonce', 'jour', 'heure_ouverture', 'heure_fermeture')
+    list_filter = ('jour',)
+
+@admin.register(Tarif)
+class TarifAdmin(admin.ModelAdmin):
+    list_display = ('annonce', 'nom', 'prix')
+    search_fields = ('nom',)
+
+@admin.register(GaleriePhoto)
+class GaleriePhotoAdmin(admin.ModelAdmin):
+    list_display = ('annonce', 'image')
+    list_filter = ('annonce',)

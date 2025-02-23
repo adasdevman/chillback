@@ -544,3 +544,45 @@ def create_annonce(request):
     else:
         print("❌ Erreurs de validation:", serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def upload_annonce_photo(request, pk):
+    """Upload a photo for an announcement."""
+    try:
+        annonce = Annonce.objects.get(id=pk)
+        
+        # Vérifier que l'utilisateur est le propriétaire de l'annonce
+        if annonce.utilisateur != request.user:
+            return Response(
+                {'error': 'Vous n\'êtes pas autorisé à modifier cette annonce'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+        
+        # Vérifier qu'une image a été envoyée
+        if 'image' not in request.FILES:
+            return Response(
+                {'error': 'Aucune image n\'a été envoyée'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        # Créer la photo
+        photo = GaleriePhoto.objects.create(
+            annonce=annonce,
+            image=request.FILES['image']
+        )
+        
+        serializer = GaleriePhotoSerializer(photo)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        
+    except Annonce.DoesNotExist:
+        return Response(
+            {'error': 'Annonce non trouvée'},
+            status=status.HTTP_404_NOT_FOUND
+        )
+    except Exception as e:
+        logger.error(f"Erreur lors du téléchargement de la photo: {str(e)}")
+        return Response(
+            {'error': 'Une erreur est survenue lors du téléchargement de la photo'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
