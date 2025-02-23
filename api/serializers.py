@@ -59,6 +59,6 @@ class PaymentSerializer(serializers.ModelSerializer):
         read_only_fields = ['user', 'transaction_id']
 
     def create(self, validated_data):
-        validated_data['transaction_id'] = str(uuid.uuid4())
+        validated_data['transaction_id'] = f"TR-{str(uuid.uuid4())[:8]}"
         validated_data['status'] = 'pending'
         return super().create(validated_data) 

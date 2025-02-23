@@ -304,7 +304,21 @@ def create_payment(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def payment_history(request):
-    payments = Payment.objects.filter(user=request.user)
+    # Récupérer les paramètres de la requête
+    payment_type = request.query_params.get('payment_type')
+    status = request.query_params.get('status')
+    
+    # Construire le filtre de base
+    filters = {'user': request.user}
+    
+    # Ajouter les filtres optionnels
+    if payment_type:
+        filters['payment_type'] = payment_type
+    if status:
+        filters['status'] = status
+    
+    # Appliquer les filtres
+    payments = Payment.objects.filter(**filters)
     serializer = PaymentSerializer(payments, many=True)
     return Response(serializer.data)
 
