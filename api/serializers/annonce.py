@@ -19,25 +19,34 @@ class GaleriePhotoSerializer(serializers.ModelSerializer):
 
 class AnnonceSerializer(TimeStampedModelSerializer):
     photos = GaleriePhotoSerializer(many=True, read_only=True)
+    categorie_id = serializers.IntegerField(write_only=True)
+    sous_categorie_id = serializers.IntegerField(write_only=True)
 
     class Meta:
         model = Annonce
         fields = [
             'id', 'titre', 'description', 'localisation',
-            'date_evenement', 'est_actif', 'categorie',
-            'sous_categorie', 'photos', 'created', 'modified'
+            'date_evenement', 'est_actif', 'categorie_id',
+            'sous_categorie_id', 'photos', 'created', 'modified'
         ]
 
-    def create(self, validated_data):
-        categorie_data = validated_data.pop('categorie', None)
-        sous_categorie_data = validated_data.pop('sous_categorie', None)
+    def validate(self, data):
+        # Vérifier que la catégorie existe
+        try:
+            categorie = Categorie.objects.get(id=data['categorie_id'])
+        except Categorie.DoesNotExist:
+            raise serializers.ValidationError({'categorie_id': 'Cette catégorie n\'existe pas'})
 
-        if categorie_data:
-            validated_data['categorie_id'] = categorie_data['id']
-        if sous_categorie_data:
-            validated_data['sous_categorie_id'] = sous_categorie_data['id']
+        # Vérifier que la sous-catégorie existe et appartient à la catégorie
+        try:
+            sous_categorie = SousCategorie.objects.get(
+                id=data['sous_categorie_id'],
+                categorie_id=data['categorie_id']
+            )
+        except SousCategorie.DoesNotExist:
+            raise serializers.ValidationError({'sous_categorie_id': 'Cette sous-catégorie n\'existe pas ou n\'appartient pas à la catégorie sélectionnée'})
 
-        return super().create(validated_data)
+        return data 
 
 class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
