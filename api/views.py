@@ -42,6 +42,7 @@ from django.utils.decorators import method_decorator
 import json
 import os
 from django.conf import settings
+from core.serializers.payment import PaymentSerializer  # Import explicite du bon serializer
 
 logger = logging.getLogger(__name__)
 
@@ -310,6 +311,8 @@ def payment_history(request):
     payment_type = request.query_params.get('payment_type')
     status = request.query_params.get('status')
     
+    logger.info(f"Payment history request - payment_type: {payment_type}, status: {status}")
+    
     # Construire le filtre de base
     filters = {'user': request.user}
     
@@ -319,8 +322,12 @@ def payment_history(request):
     if status:
         filters['status'] = status
     
+    logger.info(f"Applying filters: {filters}")
+    
     # Appliquer les filtres
     payments = Payment.objects.filter(**filters)
+    logger.info(f"Found {payments.count()} payments")
+    
     serializer = PaymentSerializer(payments, many=True)
     return Response(serializer.data)
 

@@ -2,9 +2,11 @@ from rest_framework import serializers
 from ..models import Payment
 from .base import TimeStampedModelSerializer
 from .annonce import AnnonceListSerializer
+from users.serializers import UserProfileSerializer
 
 class PaymentSerializer(TimeStampedModelSerializer):
     annonce = AnnonceListSerializer(read_only=True)
+    user = UserProfileSerializer(read_only=True)
     status_display = serializers.CharField(source='get_status_display', read_only=True)
     payment_type_display = serializers.CharField(source='get_payment_type_display', read_only=True)
 
@@ -13,6 +15,6 @@ class PaymentSerializer(TimeStampedModelSerializer):
         fields = [
             'id', 'user', 'annonce', 'amount', 'status', 'status_display',
             'payment_type', 'payment_type_display', 'transaction_id',
-            'description', 'created', 'modified'
+            'description', 'created', 'modified', 'tarif'
         ]
-        read_only_fields = ['user', 'transaction_id'] 
+        read_only_fields = ['user', 'transaction_id', 'created', 'modified'] 
