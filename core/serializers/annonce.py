@@ -52,22 +52,28 @@ class AnnonceListSerializer(TimeStampedModelSerializer):
         ]
 
 class AnnonceSerializer(TimeStampedModelSerializer):
-    categorie_nom = serializers.CharField(source='categorie.nom')
-    sous_categorie_nom = serializers.CharField(source='sous_categorie.nom')
     photos = GaleriePhotoSerializer(many=True, read_only=True)
     horaires = HoraireSerializer(source='horaire_set', many=True, read_only=True)
     tarifs = TarifSerializer(many=True, read_only=True)
     annonceur = UserProfileSerializer(source='utilisateur', read_only=True)
+    categorie = CategorieSerializer(read_only=True)
+    sous_categorie = SousCategorieSerializer(read_only=True)
 
     class Meta:
         model = Annonce
         fields = [
             'id', 'titre', 'description', 'localisation',
-            'date_evenement', 'est_actif', 'categorie',
-            'sous_categorie', 'categorie_nom', 'sous_categorie_nom',
+            'date_evenement', 'est_actif', 'categorie_id',
+            'sous_categorie_id', 'categorie', 'sous_categorie',
             'photos', 'horaires', 'tarifs', 'annonceur',
             'created', 'modified'
         ]
+        read_only_fields = ['utilisateur']
+
+    def create(self, validated_data):
+        # Ensure the user is set from the context
+        validated_data['utilisateur'] = self.context['request'].user
+        return super().create(validated_data)
 
 class AnnonceDetailSerializer(TimeStampedModelSerializer):
     categorie = CategorieSerializer(read_only=True)
