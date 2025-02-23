@@ -314,6 +314,11 @@ def annonce_edit(request, annonce_id):
             annonce.titre = titre
             annonce.description = description
             annonce.localisation = localisation
+            
+            # Mise à jour du statut
+            status = request.POST.get('status')
+            if status in ['PENDING', 'ACTIVE', 'INACTIVE']:
+                annonce.status = status
 
             # Gestion de la date d'événement pour la catégorie EVENT
             if categorie == 'EVENT':

@@ -56,6 +56,15 @@
                     <textarea name="localisation" class="form-control" rows="2" required>{{ annonce.localisation }}</textarea>
                 </div>
 
+                <div class="form-group mb-3">
+                    <label class="form-label">Statut</label>
+                    <select name="status" class="form-control">
+                        <option value="PENDING" {% if annonce.status == 'PENDING' %}selected{% endif %}>En attente</option>
+                        <option value="ACTIVE" {% if annonce.status == 'ACTIVE' %}selected{% endif %}>Active</option>
+                        <option value="INACTIVE" {% if annonce.status == 'INACTIVE' %}selected{% endif %}>Inactive</option>
+                    </select>
+                </div>
+
                 <!-- Champs date et heure pour les événements -->
                 <div id="event-fields" style="display: none;">
                     <div class="form-group mb-3">
