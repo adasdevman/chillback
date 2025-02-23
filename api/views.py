@@ -34,6 +34,7 @@ from django.db.models import Q
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -186,6 +187,17 @@ class AnnonceList(generics.ListCreateAPIView):
         queryset = self.get_queryset()
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)
+
+    def create(self, request, *args, **kwargs):
+        print("🔍 Données reçues:", request.data)  # Log des données reçues
+        serializer = self.get_serializer(data=request.data)
+        if serializer.is_valid():
+            print("✅ Données validées:", serializer.validated_data)  # Log des données validées
+            serializer.save(utilisateur=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            print("❌ Erreurs de validation:", serializer.errors)  # Log des erreurs
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def perform_create(self, serializer):
         serializer.save(utilisateur=self.request.user)
@@ -505,3 +517,21 @@ class NotificationViewSet(ModelViewSet):
         notification.is_read = True
         notification.save()
         return Response({"status": "success"})
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def create_annonce(request):
+    print("🔍 Données reçues:", json.dumps(request.data, indent=2))
+    
+    serializer = AnnonceSerializer(data=request.data)
+    if serializer.is_valid():
+        print("✅ Données validées:", json.dumps(serializer.validated_data, indent=2))
+        try:
+            annonce = serializer.save(utilisateur=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Exception as e:
+            print("❌ Erreur lors de la sauvegarde:", str(e))
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+    else:
+        print("❌ Erreurs de validation:", serializer.errors)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

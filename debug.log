@@ -14974,3 +14974,121 @@ INFO 2025-02-13 13:19:18,634 basehttp 18516 25760 "GET /admin/jsi18n/ HTTP/1.1" 
 INFO 2025-02-13 13:19:27,948 basehttp 18516 25760 "POST /admin/core/payment/29/change/ HTTP/1.1" 302 0
 INFO 2025-02-13 13:19:31,043 basehttp 18516 25760 "GET /admin/core/payment/ HTTP/1.1" 200 16196
 INFO 2025-02-13 13:19:32,955 basehttp 18516 25760 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:54:12,180 autoreload 18516 17016 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\annonce.py changed, reloading.
+INFO 2025-02-13 13:54:14,331 autoreload 18612 13524 Watching for file changes with StatReloader
+INFO 2025-02-13 13:55:33,466 autoreload 18612 13524 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 13:55:34,338 autoreload 2628 5180 Watching for file changes with StatReloader
+INFO 2025-02-13 13:55:49,046 autoreload 2628 5180 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-13 13:55:49,915 autoreload 16892 27392 Watching for file changes with StatReloader
+INFO 2025-02-13 13:56:23,882 autoreload 16892 27392 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\models\annonce.py changed, reloading.
+INFO 2025-02-13 13:56:24,744 autoreload 12536 14400 Watching for file changes with StatReloader
+INFO 2025-02-13 13:57:14,034 basehttp 12536 22992 "GET /admin/core/annonce/ HTTP/1.1" 200 33021
+INFO 2025-02-13 13:57:15,847 basehttp 12536 22992 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:57:29,407 basehttp 12536 22992 "GET /admin/core/annonce/24/change/ HTTP/1.1" 200 36906
+INFO 2025-02-13 13:57:29,544 basehttp 12536 20472 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+INFO 2025-02-13 13:57:29,546 basehttp 12536 22992 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-02-13 13:57:29,547 basehttp 12536 10788 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-02-13 13:57:31,446 basehttp 12536 8180 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:57:31,533 basehttp 12536 10788 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-02-13 13:57:31,533 basehttp 12536 8180 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-02-13 13:57:31,536 basehttp 12536 22992 "GET /static/admin/img/inline-delete.svg HTTP/1.1" 200 560
+INFO 2025-02-13 13:57:47,457 basehttp 12536 22992 "POST /admin/core/annonce/24/change/ HTTP/1.1" 302 0
+INFO 2025-02-13 13:57:53,443 basehttp 12536 22992 "GET /admin/core/annonce/ HTTP/1.1" 200 33256
+INFO 2025-02-13 13:57:55,323 basehttp 12536 22992 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 13:59:45,245 basehttp 12536 22992 "GET /admin/core/annonce/23/change/ HTTP/1.1" 200 36881
+INFO 2025-02-13 13:59:47,133 basehttp 12536 22992 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 14:00:01,653 basehttp 12536 22992 "POST /admin/core/annonce/23/change/ HTTP/1.1" 302 0
+INFO 2025-02-13 14:00:07,607 basehttp 12536 22992 "GET /admin/core/annonce/ HTTP/1.1" 200 33252
+INFO 2025-02-13 14:00:09,546 basehttp 12536 22992 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 14:00:34,708 basehttp 12536 22992 "GET /admin/core/annonce/?status__exact=pending HTTP/1.1" 200 33765
+INFO 2025-02-13 14:00:36,515 basehttp 12536 22992 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 14:00:52,233 basehttp 12536 22992 "POST /admin/core/annonce/?status__exact=pending HTTP/1.1" 302 0
+INFO 2025-02-13 14:00:57,893 basehttp 12536 22992 "GET /admin/core/annonce/?status__exact=pending HTTP/1.1" 200 16389
+INFO 2025-02-13 14:00:59,617 autoreload 12536 14400 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-13 14:01:00,586 autoreload 24904 15736 Watching for file changes with StatReloader
+INFO 2025-02-13 14:01:13,146 autoreload 24904 15736 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
+INFO 2025-02-13 14:01:13,964 autoreload 14444 13352 Watching for file changes with StatReloader
+INFO 2025-02-13 14:01:34,201 basehttp 14444 7740 "GET /admin/core/annonce/?status__exact=approved HTTP/1.1" 200 35264
+INFO 2025-02-13 14:01:36,067 basehttp 14444 7740 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 14:01:59,247 basehttp 14444 7740 "GET /admin/core/annonce/3/change/?_changelist_filters=status__exact%3Dapproved HTTP/1.1" 200 50168
+INFO 2025-02-13 14:02:01,121 basehttp 14444 7740 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 14:03:11,883 basehttp 14444 7740 "POST /admin/core/annonce/3/change/?_changelist_filters=status__exact%3Dapproved HTTP/1.1" 302 0
+INFO 2025-02-13 14:03:18,389 basehttp 14444 7740 "GET /admin/core/annonce/?status__exact=approved HTTP/1.1" 200 34826
+INFO 2025-02-13 14:03:20,269 basehttp 14444 7740 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 14:14:36,481 autoreload 14444 13352 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\admin.py changed, reloading.
+INFO 2025-02-13 14:14:40,413 autoreload 11920 22028 Watching for file changes with StatReloader
+INFO 2025-02-13 14:14:52,512 basehttp 11920 17768 "GET /admin/core/annonce/ HTTP/1.1" 200 31447
+INFO 2025-02-13 14:14:54,447 basehttp 11920 17768 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-13 16:11:48,893 autoreload 11920 22028 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-13 16:11:51,754 autoreload 16968 11792 Watching for file changes with StatReloader
+INFO 2025-02-13 16:12:06,230 autoreload 16968 11792 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\urls.py changed, reloading.
+INFO 2025-02-13 16:12:07,355 autoreload 10164 25436 Watching for file changes with StatReloader
+INFO 2025-02-13 16:34:15,334 autoreload 10164 25436 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-13 16:34:16,404 autoreload 18388 22704 Watching for file changes with StatReloader
+INFO 2025-02-14 05:52:07,877 autoreload 18388 22704 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-14 05:52:10,867 autoreload 2360 17588 Watching for file changes with StatReloader
+INFO 2025-02-20 19:29:39,915 autoreload 30096 32276 Watching for file changes with StatReloader
+INFO 2025-02-20 19:32:51,318 basehttp 30096 29272 "GET / HTTP/1.1" 302 0
+INFO 2025-02-20 19:33:10,729 basehttp 30096 29272 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-02-20 19:33:11,150 basehttp 30096 29272 "GET /dashboard/login/?next=/dashboard/ HTTP/1.1" 200 3778
+INFO 2025-02-20 19:33:11,965 basehttp 30096 29272 "GET /static/css/dashboard.css HTTP/1.1" 200 17121
+INFO 2025-02-20 19:33:24,149 basehttp 30096 29272 "GET /static/images/Chillnow%20logo%201.png HTTP/1.1" 200 12694
+INFO 2025-02-20 21:18:16,221 basehttp 30096 21076 "GET / HTTP/1.1" 302 0
+INFO 2025-02-20 21:18:16,236 basehttp 30096 21076 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-02-20 21:18:16,236 basehttp 30096 21076 "GET /dashboard/login/?next=/dashboard/ HTTP/1.1" 200 3778
+INFO 2025-02-20 21:18:30,765 basehttp 30096 21076 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-02-20 21:18:30,904 basehttp 30096 21076 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4162
+INFO 2025-02-20 21:18:30,938 basehttp 30096 21076 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-02-20 21:18:30,949 basehttp 30096 1848 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-02-20 21:18:30,953 basehttp 30096 21076 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-02-20 21:18:30,953 basehttp 30096 22372 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-02-20 21:18:30,954 basehttp 30096 28904 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-02-20 21:18:30,955 basehttp 30096 20524 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:18:30,965 basehttp 30096 20524 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:25,721 basehttp 30096 20524 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-02-20 21:19:32,835 basehttp 30096 20524 "GET /admin/ HTTP/1.1" 200 13337
+INFO 2025-02-20 21:19:32,853 basehttp 30096 20524 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-02-20 21:19:32,908 basehttp 30096 22372 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:32,920 basehttp 30096 28904 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-02-20 21:19:32,920 basehttp 30096 20524 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-02-20 21:19:50,639 basehttp 30096 20524 - Broken pipe from ('127.0.0.1', 62734)
+INFO 2025-02-20 21:19:53,032 basehttp 30096 28904 "GET /admin/core/notification/add/ HTTP/1.1" 200 15573
+INFO 2025-02-20 21:19:53,058 basehttp 30096 28904 "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2025-02-20 21:19:53,069 basehttp 30096 1848 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:53,070 basehttp 30096 28904 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:53,071 basehttp 30096 21076 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:53,073 basehttp 30096 8452 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:53,073 basehttp 30096 8764 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:53,074 basehttp 30096 1848 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:53,076 basehttp 30096 21076 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:53,076 basehttp 30096 28904 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:19:53,091 basehttp 30096 28904 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2025-02-20 21:19:53,099 basehttp 30096 28904 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-02-20 21:19:53,115 basehttp 30096 28904 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-02-20 21:19:53,119 basehttp 30096 28904 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-02-20 21:19:57,001 basehttp 30096 22372 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-20 21:20:40,317 basehttp 30096 22372 "POST /admin/core/notification/add/ HTTP/1.1" 302 0
+INFO 2025-02-20 21:20:48,669 basehttp 30096 22372 "GET /admin/core/notification/ HTTP/1.1" 200 15095
+INFO 2025-02-20 21:20:48,694 basehttp 30096 22372 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-02-20 21:20:48,716 basehttp 30096 28904 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-02-20 21:20:48,740 basehttp 30096 28904 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-02-20 21:20:48,741 basehttp 30096 22372 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-02-20 21:20:48,744 basehttp 30096 22372 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-02-20 21:20:52,108 basehttp 30096 21076 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-20 21:20:52,134 basehttp 30096 21076 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-02-20 21:20:52,151 basehttp 30096 22372 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-02-21 09:34:38,983 autoreload 47860 47768 Watching for file changes with StatReloader
+INFO 2025-02-21 10:11:39,625 basehttp 47860 57260 "GET / HTTP/1.1" 302 0
+INFO 2025-02-21 10:11:43,216 basehttp 47860 56388 "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2025-02-21 10:11:43,369 basehttp 47860 56388 "GET /dashboard/login/?next=/dashboard/ HTTP/1.1" 200 3778
+INFO 2025-02-21 10:11:43,581 basehttp 47860 56388 "GET /static/css/dashboard.css HTTP/1.1" 200 17121
+INFO 2025-02-21 10:11:45,401 basehttp 47860 56388 "GET /static/images/Chillnow%20logo%201.png HTTP/1.1" 200 12694
+WARNING 2025-02-21 10:11:47,312 log 47860 56388 Not Found: /favicon.ico
+WARNING 2025-02-21 10:11:47,316 basehttp 47860 56388 "GET /favicon.ico HTTP/1.1" 404 2839
+INFO 2025-02-21 10:20:30,180 basehttp 47860 51312 "POST /dashboard/login/?next=/dashboard/ HTTP/1.1" 302 0
+INFO 2025-02-21 10:20:42,940 basehttp 47860 51312 "GET /dashboard/ HTTP/1.1" 200 8917
+INFO 2025-02-23 03:43:27,094 autoreload 3720 7736 Watching for file changes with StatReloader
+INFO 2025-02-23 06:22:49,096 autoreload 3720 7736 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-23 06:23:01,099 autoreload 23280 22584 Watching for file changes with StatReloader
+INFO 2025-02-23 06:23:08,241 autoreload 23280 22584 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-23 06:26:14,869 autoreload 19720 22696 Watching for file changes with StatReloader

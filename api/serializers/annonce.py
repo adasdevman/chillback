@@ -28,6 +28,17 @@ class AnnonceSerializer(TimeStampedModelSerializer):
             'sous_categorie', 'photos', 'created', 'modified'
         ]
 
+    def create(self, validated_data):
+        categorie_data = validated_data.pop('categorie', None)
+        sous_categorie_data = validated_data.pop('sous_categorie', None)
+
+        if categorie_data:
+            validated_data['categorie_id'] = categorie_data['id']
+        if sous_categorie_data:
+            validated_data['sous_categorie_id'] = sous_categorie_data['id']
+
+        return super().create(validated_data)
+
 class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Payment
