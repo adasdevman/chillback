@@ -166,6 +166,7 @@ class AnnonceList(generics.ListCreateAPIView):
         # Récupérer les paramètres de filtrage
         category_id = self.request.query_params.get('categorie')
         subcategory_id = self.request.query_params.get('sous_categorie')
+        status = self.request.query_params.get('status')
         search_query = self.request.query_params.get('search')
 
         # Filtrer par catégorie
@@ -175,6 +176,10 @@ class AnnonceList(generics.ListCreateAPIView):
         # Filtrer par sous-catégorie
         if subcategory_id:
             queryset = queryset.filter(sous_categorie_id=subcategory_id)
+
+        # Filtrer par statut
+        if status:
+            queryset = queryset.filter(status=status)
 
         # Recherche textuelle
         if search_query:
@@ -321,11 +326,15 @@ class AnnonceViewSet(ReadOnlyModelViewSet):
         queryset = Annonce.objects.filter(est_actif=True)
         category_id = self.request.query_params.get('categorie', None)
         subcategory_id = self.request.query_params.get('sous_categorie', None)
+        status = self.request.query_params.get('status', 'ACTIVE')  # Par défaut, on ne montre que les annonces actives
 
         if category_id:
             queryset = queryset.filter(categorie_id=category_id)
         if subcategory_id:
             queryset = queryset.filter(sous_categorie_id=subcategory_id)
+        
+        # Toujours filtrer par statut
+        queryset = queryset.filter(status=status)
 
         return queryset.select_related('categorie', 'sous_categorie').prefetch_related('photos')
 

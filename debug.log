@@ -15181,3 +15181,26 @@ INFO 2025-02-23 08:50:04,054 autoreload 57016 57624 C:\Users\Nevada Man\CascadeP
 INFO 2025-02-23 08:50:05,619 autoreload 59952 59860 Watching for file changes with StatReloader
 INFO 2025-02-23 08:50:15,884 autoreload 59952 59860 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\views.py changed, reloading.
 INFO 2025-02-23 08:50:17,076 autoreload 60132 59920 Watching for file changes with StatReloader
+INFO 2025-02-23 08:52:24,219 basehttp 60132 57712 "GET /dashboard/annonces/23/edit/ HTTP/1.1" 200 21715
+INFO 2025-02-23 08:52:40,262 basehttp 60132 57712 "POST /dashboard/annonces/23/edit/ HTTP/1.1" 302 0
+INFO 2025-02-23 08:52:49,667 basehttp 60132 57712 "GET /dashboard/annonces/ HTTP/1.1" 200 20775
+INFO 2025-02-23 08:53:11,931 basehttp 60132 57712 "GET /admin/core/annonce/ HTTP/1.1" 200 30672
+INFO 2025-02-23 08:53:14,127 basehttp 60132 57712 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-23 08:53:32,219 basehttp 60132 57712 "GET /admin/core/payment/ HTTP/1.1" 200 22479
+INFO 2025-02-23 08:53:34,403 basehttp 60132 57712 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-23 08:54:02,915 basehttp 60132 57712 "GET /admin/core/payment/52/change/ HTTP/1.1" 200 27586
+INFO 2025-02-23 08:54:05,173 basehttp 60132 57712 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-02-23 08:54:22,805 basehttp 60132 57712 "GET /dashboard/payments/ HTTP/1.1" 200 41574
+INFO 2025-02-23 08:54:29,048 basehttp 60132 57712 "GET /dashboard/payments/52/edit/ HTTP/1.1" 200 8383
+INFO 2025-02-23 08:54:39,977 basehttp 60132 57712 "GET /dashboard/payments/52/ HTTP/1.1" 200 9030
+INFO 2025-02-23 08:54:45,953 basehttp 60132 57712 "GET /dashboard/users/ HTTP/1.1" 200 14087
+INFO 2025-02-23 08:54:59,715 basehttp 60132 57712 - Broken pipe from ('127.0.0.1', 56423)
+INFO 2025-02-23 08:55:01,520 basehttp 60132 61364 "GET /dashboard/annonces/ HTTP/1.1" 200 20616
+INFO 2025-02-23 09:31:30,085 autoreload 60132 59920 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-23 09:31:31,879 autoreload 70172 70156 Watching for file changes with StatReloader
+INFO 2025-02-23 09:31:39,896 autoreload 70172 70156 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-23 09:31:40,882 autoreload 70520 70452 Watching for file changes with StatReloader
+INFO 2025-02-23 09:31:44,324 autoreload 70520 70452 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-23 09:31:45,683 autoreload 70564 70128 Watching for file changes with StatReloader
+INFO 2025-02-23 09:35:50,248 autoreload 70564 70128 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-23 09:35:51,189 autoreload 67396 67416 Watching for file changes with StatReloader
