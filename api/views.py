@@ -40,9 +40,6 @@ from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 import json
-import os
-from django.conf import settings
-from core.serializers.payment import PaymentSerializer  # Import explicite du bon serializer
 
 logger = logging.getLogger(__name__)
 
@@ -307,27 +304,7 @@ def create_payment(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def payment_history(request):
-    # Récupérer les paramètres de la requête
-    payment_type = request.query_params.get('payment_type')
-    status = request.query_params.get('status')
-    
-    logger.info(f"Payment history request - payment_type: {payment_type}, status: {status}")
-    
-    # Construire le filtre de base
-    filters = {'user': request.user}
-    
-    # Ajouter les filtres optionnels
-    if payment_type:
-        filters['payment_type'] = payment_type
-    if status:
-        filters['status'] = status
-    
-    logger.info(f"Applying filters: {filters}")
-    
-    # Appliquer les filtres
-    payments = Payment.objects.filter(**filters)
-    logger.info(f"Found {payments.count()} payments")
-    
+    payments = Payment.objects.filter(user=request.user)
     serializer = PaymentSerializer(payments, many=True)
     return Response(serializer.data)
 
@@ -598,29 +575,11 @@ def upload_annonce_photo(request, pk):
                 status=status.HTTP_400_BAD_REQUEST
             )
         
-        # Log des informations sur le fichier
-        image_file = request.FILES['image']
-        logger.info(f"Réception d'une image: {image_file.name}, taille: {image_file.size} bytes")
-        
-        # Vérifier le type MIME
-        if not image_file.content_type.startswith('image/'):
-            return Response(
-                {'error': 'Le fichier doit être une image'},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-        
-        # Créer le dossier de destination si nécessaire
-        upload_path = os.path.join(settings.MEDIA_ROOT, 'annonces/photos')
-        if not os.path.exists(upload_path):
-            os.makedirs(upload_path)
-            logger.info(f"Création du dossier: {upload_path}")
-        
         # Créer la photo
         photo = GaleriePhoto.objects.create(
             annonce=annonce,
-            image=image_file
+            image=request.FILES['image']
         )
-        logger.info(f"Photo créée avec succès: {photo.image.name}")
         
         serializer = GaleriePhotoSerializer(photo)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
