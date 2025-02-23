@@ -13,7 +13,12 @@ from core.models import (
 from core.serializers.annonce import (
     AnnonceListSerializer,
     AnnonceSerializer,
+    AnnonceDetailSerializer,
     CategorieSerializer,
+    SousCategorieSerializer,
+    HoraireSerializer,
+    TarifSerializer,
+    GaleriePhotoSerializer,
     PaymentSerializer
 )
 from core.serializers.notification import NotificationSerializer
@@ -148,8 +153,12 @@ class CategorieList(generics.ListAPIView):
         return Response(serializer.data)
 
 class AnnonceList(generics.ListCreateAPIView):
-    serializer_class = AnnonceListSerializer
     permission_classes = [AllowAny]
+
+    def get_serializer_class(self):
+        if self.request.method == 'POST':
+            return AnnonceSerializer
+        return AnnonceListSerializer
 
     def get_queryset(self):
         queryset = Annonce.objects.filter(est_actif=True)
@@ -193,7 +202,7 @@ class AnnonceList(generics.ListCreateAPIView):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             print("✅ Données validées:", serializer.validated_data)  # Log des données validées
-            serializer.save(utilisateur=request.user)
+            self.perform_create(serializer)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             print("❌ Erreurs de validation:", serializer.errors)  # Log des erreurs

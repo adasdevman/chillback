@@ -65,8 +65,6 @@ class AnnonceSerializer(TimeStampedModelSerializer):
     localisation = serializers.CharField(required=True)
     date_evenement = serializers.DateField(required=False, allow_null=True)
     est_actif = serializers.BooleanField(default=True)
-    categorie_id = serializers.IntegerField(required=True, write_only=True)
-    sous_categorie_id = serializers.IntegerField(required=True, write_only=True)
 
     class Meta:
         model = Annonce
@@ -80,18 +78,27 @@ class AnnonceSerializer(TimeStampedModelSerializer):
         read_only_fields = ['utilisateur']
 
     def validate(self, data):
-        # Validate that the category exists
+        # Get category and subcategory IDs from the request data
+        categorie_id = self.initial_data.get('categorie_id')
+        sous_categorie_id = self.initial_data.get('sous_categorie_id')
+
+        if not categorie_id:
+            raise serializers.ValidationError({'categorie_id': 'Ce champ est obligatoire.'})
+        if not sous_categorie_id:
+            raise serializers.ValidationError({'sous_categorie_id': 'Ce champ est obligatoire.'})
+
         try:
-            categorie = Categorie.objects.get(id=data['categorie_id'])
+            categorie = Categorie.objects.get(id=categorie_id)
+            data['categorie'] = categorie
         except Categorie.DoesNotExist:
             raise serializers.ValidationError({'categorie_id': 'Catégorie invalide'})
 
-        # Validate that the subcategory exists and belongs to the category
         try:
             sous_categorie = SousCategorie.objects.get(
-                id=data['sous_categorie_id'],
+                id=sous_categorie_id,
                 categorie=categorie
             )
+            data['sous_categorie'] = sous_categorie
         except SousCategorie.DoesNotExist:
             raise serializers.ValidationError({'sous_categorie_id': 'Sous-catégorie invalide'})
 

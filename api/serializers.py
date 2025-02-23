@@ -2,10 +2,6 @@ from rest_framework import serializers
 from django.contrib.auth import authenticate
 from django.utils.translation import gettext_lazy as _
 from users.models import User
-from core.models import (
-    Categorie, SousCategorie, Annonce,
-    GaleriePhoto, Horaire, Payment, Tarif
-)
 import uuid
 
 class UserSerializer(serializers.ModelSerializer):
@@ -51,46 +47,6 @@ class AnnonceurRegisterSerializer(RegisterSerializer):
     def create(self, validated_data):
         validated_data['role'] = 'ANNONCEUR'
         return super().create(validated_data)
-
-class CategorieSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Categorie
-        fields = ['id', 'nom', 'description', 'ordre']
-
-class SousCategorieSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = SousCategorie
-        fields = ['id', 'categorie', 'nom', 'description', 'ordre']
-
-class HoraireSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Horaire
-        fields = ['id', 'jour', 'heure_ouverture', 'heure_fermeture']
-
-class GaleriePhotoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = GaleriePhoto
-        fields = ['id', 'image']
-
-class TarifSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Tarif
-        fields = ['id', 'nom', 'prix']
-
-class AnnonceSerializer(serializers.ModelSerializer):
-    horaires = HoraireSerializer(source='horaire_set', many=True, read_only=True)
-    photos = GaleriePhotoSerializer(many=True, read_only=True)
-    categorie = CategorieSerializer(read_only=True)
-    sous_categorie = SousCategorieSerializer(read_only=True)
-    tarifs = TarifSerializer(many=True, read_only=True)
-
-    class Meta:
-        model = Annonce
-        fields = [
-            'id', 'titre', 'description', 'categorie', 'sous_categorie',
-            'localisation', 'date_evenement', 'est_actif', 'horaires',
-            'photos', 'tarifs', 'created', 'modified'
-        ]
 
 class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
