@@ -65,6 +65,7 @@ class AnnonceSerializer(TimeStampedModelSerializer):
     localisation = serializers.CharField(required=True)
     date_evenement = serializers.DateField(required=False, allow_null=True)
     est_actif = serializers.BooleanField(default=True)
+    status = serializers.CharField(default='PENDING')
 
     class Meta:
         model = Annonce
@@ -73,7 +74,7 @@ class AnnonceSerializer(TimeStampedModelSerializer):
             'date_evenement', 'est_actif', 'categorie_id',
             'sous_categorie_id', 'categorie', 'sous_categorie',
             'photos', 'horaires', 'tarifs', 'annonceur',
-            'created', 'modified'
+            'created', 'modified', 'status'
         ]
         read_only_fields = ['utilisateur']
 
@@ -101,6 +102,10 @@ class AnnonceSerializer(TimeStampedModelSerializer):
             data['sous_categorie'] = sous_categorie
         except SousCategorie.DoesNotExist:
             raise serializers.ValidationError({'sous_categorie_id': 'Sous-catégorie invalide'})
+
+        # Set default status if not provided
+        if 'status' not in data:
+            data['status'] = 'PENDING'
 
         return data
 

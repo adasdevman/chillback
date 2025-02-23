@@ -6,7 +6,7 @@ from .auth import (
     AnnonceurRegisterSerializer
 )
 
-from .annonce import (
+from core.serializers.annonce import (
     CategorieSerializer,
     AnnonceListSerializer,
     AnnonceSerializer,

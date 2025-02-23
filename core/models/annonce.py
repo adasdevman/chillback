@@ -35,6 +35,12 @@ class SousCategorie(models.Model):
         return f"{self.categorie.nom} - {self.nom}"
 
 class Annonce(TimeStampedModel):
+    STATUS_CHOICES = (
+        ('ACTIVE', 'Active'),
+        ('PENDING', 'En attente'),
+        ('INACTIVE', 'Inactive'),
+    )
+
     utilisateur = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -55,6 +61,7 @@ class Annonce(TimeStampedModel):
     localisation = models.TextField()
     date_evenement = models.DateTimeField(null=True, blank=True)
     est_actif = models.BooleanField(default=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='PENDING')
     favoris = models.ManyToManyField(
         settings.AUTH_USER_MODEL,
         related_name='core_annonces_favorites',
