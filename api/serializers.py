@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate
 from django.utils.translation import gettext_lazy as _
 from users.models import User
 import uuid
+from core.models.payment import Payment
+from core.serializers.payment import PaymentSerializer as CorePaymentSerializer
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -48,17 +50,5 @@ class AnnonceurRegisterSerializer(RegisterSerializer):
         validated_data['role'] = 'ANNONCEUR'
         return super().create(validated_data)
 
-class PaymentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Payment
-        fields = [
-            'id', 'user', 'annonce', 'amount', 'status',
-            'payment_type', 'transaction_id', 'description',
-            'created', 'modified'
-        ]
-        read_only_fields = ['user', 'transaction_id']
-
-    def create(self, validated_data):
-        validated_data['transaction_id'] = f"TR-{str(uuid.uuid4())[:8]}"
-        validated_data['status'] = 'pending'
-        return super().create(validated_data) 
+# Use the core PaymentSerializer instead of redefining it here
+PaymentSerializer = CorePaymentSerializer 
