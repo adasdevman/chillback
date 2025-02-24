@@ -92,20 +92,24 @@ class AnnonceAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ('transaction_id', 'user', 'get_annonce_title', 'amount', 'status', 'payment_type', 'created')
+    list_display = ('transaction_id', 'user', 'amount', 'status', 'payment_type', 'created')
     list_filter = ('status', 'payment_type', 'created')
-    search_fields = ('transaction_id', 'user__email', 'annonce__titre')
-    readonly_fields = ('created', 'modified', 'transaction_id')
-    ordering = ('-created',)
-    
+    search_fields = ('transaction_id', 'user__email', 'annonce_titre')
+    readonly_fields = ('transaction_id', 'created', 'modified')
     fieldsets = (
         ('Informations principales', {
-            'fields': ('user', 'annonce', 'tarif', 'amount', 'status', 'payment_type')
+            'fields': ('transaction_id', 'user', 'amount', 'status', 'payment_type', 'description')
         }),
-        ('Transaction', {
-            'fields': ('transaction_id', 'description')
+        ('Informations utilisateur', {
+            'fields': ('user_first_name', 'user_last_name', 'user_email', 'user_phone', 'user_address', 'user_city')
         }),
-        ('Métadonnées', {
+        ('Informations annonce', {
+            'fields': ('annonce', 'annonce_titre', 'annonce_categorie', 'annonce_sous_categorie', 'annonce_utilisateur_id')
+        }),
+        ('Informations tarif', {
+            'fields': ('tarif', 'tarif_nom', 'tarif_prix')
+        }),
+        ('Dates', {
             'fields': ('created', 'modified')
         }),
     )

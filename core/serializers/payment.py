@@ -28,48 +28,83 @@ class PaymentSerializer(TimeStampedModelSerializer):
         # Remove billing_info from validated_data if present
         billing_info = validated_data.pop('billing_info', None) or self.context.get('billing_info', {})
         
-        # Initialize default values for required fields
-        validated_data.setdefault('annonce_titre', 'Non spécifié')
-        validated_data.setdefault('annonce_categorie', 'Non spécifié')
-        validated_data.setdefault('annonce_sous_categorie', '')
-        validated_data.setdefault('annonce_utilisateur_id', 0)
-        validated_data.setdefault('tarif_nom', 'Non spécifié')
-        validated_data.setdefault('tarif_prix', 0)
+        # Get annonce and tarif IDs before they are converted to instances
+        annonce_id = validated_data.get('annonce')
+        tarif_id = validated_data.get('tarif')
         
-        # Try to fetch and populate announcement details
+        # Fetch announcement details first
         try:
-            annonce_id = validated_data.get('annonce')
             if annonce_id:
-                annonce = Annonce.objects.select_related('categorie', 'sous_categorie').get(id=annonce_id)
-                validated_data['annonce_titre'] = annonce.titre
-                validated_data['annonce_categorie'] = annonce.categorie.nom if annonce.categorie else 'Non spécifié'
-                validated_data['annonce_sous_categorie'] = annonce.sous_categorie.nom if annonce.sous_categorie else ''
-                validated_data['annonce_utilisateur_id'] = annonce.utilisateur_id
+                annonce = Annonce.objects.select_related('categorie', 'sous_categorie', 'utilisateur').get(id=annonce_id)
+                # Mettre à jour les champs de l'annonce
+                validated_data.update({
+                    'annonce_titre': annonce.titre,
+                    'annonce_categorie': annonce.categorie.nom if annonce.categorie else 'Non spécifié',
+                    'annonce_sous_categorie': annonce.sous_categorie.nom if annonce.sous_categorie else '',
+                    'annonce_utilisateur_id': annonce.utilisateur.id if annonce.utilisateur else None
+                })
+            else:
+                validated_data.update({
+                    'annonce_titre': 'Non spécifié',
+                    'annonce_categorie': 'Non spécifié',
+                    'annonce_sous_categorie': '',
+                    'annonce_utilisateur_id': None
+                })
+        except Annonce.DoesNotExist:
+            print(f"Annonce with id {annonce_id} not found")
+            validated_data.update({
+                'annonce_titre': 'Non spécifié',
+                'annonce_categorie': 'Non spécifié',
+                'annonce_sous_categorie': '',
+                'annonce_utilisateur_id': None
+            })
         except Exception as e:
             print(f"Error fetching announcement details: {e}")
+            validated_data.update({
+                'annonce_titre': 'Non spécifié',
+                'annonce_categorie': 'Non spécifié',
+                'annonce_sous_categorie': '',
+                'annonce_utilisateur_id': None
+            })
 
-        # Try to fetch and populate tarif details
+        # Fetch and populate tarif details
         try:
-            tarif_id = validated_data.get('tarif')
             if tarif_id:
                 tarif = Tarif.objects.get(id=tarif_id)
-                validated_data['tarif_nom'] = tarif.nom
-                validated_data['tarif_prix'] = tarif.prix
+                validated_data.update({
+                    'tarif_nom': tarif.nom,
+                    'tarif_prix': tarif.prix
+                })
                 # Set amount if not provided
                 if 'amount' not in validated_data:
                     validated_data['amount'] = tarif.prix
+            else:
+                validated_data.update({
+                    'tarif_nom': 'Non spécifié',
+                    'tarif_prix': 0
+                })
+        except Tarif.DoesNotExist:
+            print(f"Tarif with id {tarif_id} not found")
+            validated_data.update({
+                'tarif_nom': 'Non spécifié',
+                'tarif_prix': 0
+            })
         except Exception as e:
             print(f"Error fetching tarif details: {e}")
+            validated_data.update({
+                'tarif_nom': 'Non spécifié',
+                'tarif_prix': 0
+            })
         
         # Update user information from billing info
         if billing_info:
             validated_data.update({
-                'user_first_name': billing_info.get('customer_name', 'Non spécifié'),
-                'user_last_name': billing_info.get('customer_surname', 'Non spécifié'),
-                'user_email': billing_info.get('customer_email', 'no-email@example.com'),
-                'user_phone': billing_info.get('customer_phone_number', ''),
-                'user_address': billing_info.get('customer_address', ''),
-                'user_city': billing_info.get('customer_city', ''),
+                'user_first_name': billing_info.get('customer_name', '').strip() or 'Non spécifié',
+                'user_last_name': billing_info.get('customer_surname', '').strip() or 'Non spécifié',
+                'user_email': billing_info.get('customer_email', '').strip() or 'no-email@example.com',
+                'user_phone': billing_info.get('customer_phone_number', '').strip(),
+                'user_address': billing_info.get('customer_address', '').strip(),
+                'user_city': billing_info.get('customer_city', '').strip(),
             })
         else:
             validated_data.update({
