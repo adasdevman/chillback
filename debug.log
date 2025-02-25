@@ -15204,3 +15204,21 @@ INFO 2025-02-23 09:31:44,324 autoreload 70520 70452 C:\Users\Nevada Man\CascadeP
 INFO 2025-02-23 09:31:45,683 autoreload 70564 70128 Watching for file changes with StatReloader
 INFO 2025-02-23 09:35:50,248 autoreload 70564 70128 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
 INFO 2025-02-23 09:35:51,189 autoreload 67396 67416 Watching for file changes with StatReloader
+INFO 2025-02-25 08:56:41,560 autoreload 78816 64988 Watching for file changes with StatReloader
+INFO 2025-02-25 08:58:50,368 autoreload 78816 64988 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-25 08:58:51,167 autoreload 30676 59508 Watching for file changes with StatReloader
+INFO 2025-02-25 09:00:06,985 autoreload 30676 59508 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-25 09:00:08,972 autoreload 59728 69064 Watching for file changes with StatReloader
+INFO 2025-02-25 09:05:45,585 autoreload 59728 69064 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-25 09:05:46,369 autoreload 19872 7364 Watching for file changes with StatReloader
+INFO 2025-02-25 09:07:42,847 autoreload 19872 7364 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-25 09:07:43,737 autoreload 31404 50656 Watching for file changes with StatReloader
+INFO 2025-02-25 09:11:42,472 autoreload 31404 50656 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\core\serializers\payment.py changed, reloading.
+INFO 2025-02-25 09:11:43,231 autoreload 1124 53512 Watching for file changes with StatReloader
+INFO 2025-02-25 09:11:54,777 autoreload 1124 53512 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-25 09:11:55,538 autoreload 25652 23084 Watching for file changes with StatReloader
+INFO 2025-02-25 09:12:19,919 autoreload 25652 23084 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-25 09:12:20,688 autoreload 39976 10308 Watching for file changes with StatReloader
+INFO 2025-02-25 09:13:14,810 autoreload 39976 10308 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.
+INFO 2025-02-25 09:13:15,620 autoreload 35588 33272 Watching for file changes with StatReloader
+INFO 2025-02-25 09:13:54,838 autoreload 35588 33272 C:\Users\Nevada Man\CascadeProjects\chillnow\chillnowback\api\views.py changed, reloading.

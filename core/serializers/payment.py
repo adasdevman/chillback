@@ -1,22 +1,22 @@
 from rest_framework import serializers
 from ..models import Payment, Annonce, Tarif
 from .base import TimeStampedModelSerializer
-from .annonce import AnnonceListSerializer
 
 class PaymentSerializer(TimeStampedModelSerializer):
-    annonce = AnnonceListSerializer(read_only=True)
-    annonce_id = serializers.IntegerField(write_only=True, source='annonce')
-    tarif_id = serializers.IntegerField(write_only=True, source='tarif')
     status_display = serializers.CharField(source='get_status_display', read_only=True)
     payment_type_display = serializers.CharField(source='get_payment_type_display', read_only=True)
     billing_info = serializers.JSONField(write_only=True, required=False)
+    annonce_id = serializers.IntegerField(write_only=True, source='annonce')
+    tarif_id = serializers.IntegerField(write_only=True, source='tarif')
 
     class Meta:
         model = Payment
         fields = [
-            'id', 'user', 'annonce', 'annonce_id', 'amount', 'status', 'status_display',
+            'id', 'user', 'amount', 'status', 'status_display',
             'payment_type', 'payment_type_display', 'transaction_id',
-            'description', 'created', 'modified', 'tarif', 'tarif_id', 'billing_info',
+            'description', 'created', 'modified', 'billing_info',
+            'annonce_id', 'tarif_id',
+            # Champs stockés directement dans le modèle Payment
             'user_first_name', 'user_last_name', 'user_email',
             'user_phone', 'user_address', 'user_city',
             'annonce_titre', 'annonce_categorie', 'annonce_sous_categorie',
@@ -30,37 +30,6 @@ class PaymentSerializer(TimeStampedModelSerializer):
             'annonce_utilisateur_id', 'tarif_nom', 'tarif_prix'
         ]
 
-    def validate(self, data):
-        # Validate amount is positive
-        amount = data.get('amount')
-        if amount and amount <= 0:
-            raise serializers.ValidationError({'amount': 'Le montant doit être supérieur à 0'})
-
-        # Validate annonce exists
-        annonce_id = data.get('annonce')
-        if annonce_id:
-            try:
-                annonce = Annonce.objects.get(id=annonce_id)
-                if not annonce.est_actif:
-                    raise serializers.ValidationError({'annonce': 'Cette annonce n\'est pas active'})
-            except Annonce.DoesNotExist:
-                raise serializers.ValidationError({'annonce': 'Annonce invalide'})
-
-        # Validate tarif exists and belongs to the annonce
-        tarif_id = data.get('tarif')
-        if tarif_id:
-            try:
-                tarif = Tarif.objects.get(id=tarif_id)
-                if annonce_id and tarif.annonce.id != annonce_id:
-                    raise serializers.ValidationError({'tarif': 'Le tarif sélectionné n\'appartient pas à cette annonce'})
-                # Set amount if not provided
-                if 'amount' not in data:
-                    data['amount'] = tarif.prix
-            except Tarif.DoesNotExist:
-                raise serializers.ValidationError({'tarif': 'Tarif invalide'})
-
-        return data
-
     def create(self, validated_data):
         # Remove billing_info from validated_data if present
         billing_info = validated_data.pop('billing_info', None) or self.context.get('billing_info', {})
@@ -73,13 +42,22 @@ class PaymentSerializer(TimeStampedModelSerializer):
         try:
             if annonce_id:
                 annonce = Annonce.objects.select_related('categorie', 'sous_categorie', 'utilisateur').get(id=annonce_id)
+                # Mettre à jour les champs de l'annonce
                 validated_data.update({
                     'annonce_titre': annonce.titre,
                     'annonce_categorie': annonce.categorie.nom if annonce.categorie else 'Non spécifié',
                     'annonce_sous_categorie': annonce.sous_categorie.nom if annonce.sous_categorie else '',
                     'annonce_utilisateur_id': annonce.utilisateur.id if annonce.utilisateur else None
                 })
+            else:
+                validated_data.update({
+                    'annonce_titre': 'Non spécifié',
+                    'annonce_categorie': 'Non spécifié',
+                    'annonce_sous_categorie': '',
+                    'annonce_utilisateur_id': None
+                })
         except Annonce.DoesNotExist:
+            print(f"Annonce with id {annonce_id} not found")
             validated_data.update({
                 'annonce_titre': 'Non spécifié',
                 'annonce_categorie': 'Non spécifié',
@@ -98,7 +76,13 @@ class PaymentSerializer(TimeStampedModelSerializer):
                 # Set amount if not provided
                 if 'amount' not in validated_data:
                     validated_data['amount'] = tarif.prix
+            else:
+                validated_data.update({
+                    'tarif_nom': 'Non spécifié',
+                    'tarif_prix': validated_data.get('amount', 0)
+                })
         except Tarif.DoesNotExist:
+            print(f"Tarif with id {tarif_id} not found")
             validated_data.update({
                 'tarif_nom': 'Non spécifié',
                 'tarif_prix': validated_data.get('amount', 0)

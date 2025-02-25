@@ -416,41 +416,28 @@ def mes_tickets(request):
     tickets = Payment.objects.filter(
         user=request.user,
         payment_type='ticket'
-    ).select_related('annonce')
+    )
     serializer = PaymentSerializer(tickets, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def mes_chills(request):
-    """Récupère les annonces pour lesquelles l'utilisateur a un paiement complété."""
+    """Récupère l'historique des réservations complétées de l'utilisateur."""
     try:
-        # Récupérer les IDs des annonces avec paiements complétés
-        annonce_ids = Payment.objects.filter(
+        # Récupérer directement les paiements complétés
+        chills = Payment.objects.filter(
             user=request.user,
-            status='COMPLETED'
-        ).values_list('annonce_id', flat=True).distinct()
-
-        # Récupérer les annonces complètes avec leurs relations
-        chills = Annonce.objects.filter(
-            id__in=annonce_ids
-        ).select_related(
-            'categorie',
-            'sous_categorie',
-            'utilisateur'
-        ).prefetch_related(
-            'photos',
-            'horaire_set',
-            'tarifs'
+            status='COMPLETED',
+            payment_type='reservation'  # Assurez-vous que c'est le bon type pour les réservations
         )
-
-        # Sérialiser les données avec le sérialiseur complet
-        serializer = AnnonceSerializer(chills, many=True)
+        
+        serializer = PaymentSerializer(chills, many=True)
         return Response(serializer.data)
     except Exception as e:
         logger.error(f"Erreur dans mes_chills: {str(e)}")
         return Response(
-            {'error': 'Une erreur est survenue lors de la récupération de vos chills'},
+            {'error': 'Une erreur est survenue lors de la récupération de vos réservations'},
             status=500
         )
 
