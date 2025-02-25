@@ -590,13 +590,22 @@ def received_bookings(request):
     try:
         # Récupérer les IDs des annonces de l'annonceur
         annonce_ids = Annonce.objects.filter(utilisateur=request.user).values_list('id', flat=True)
+        logger.info(f"IDs des annonces trouvées pour l'utilisateur {request.user.id}: {list(annonce_ids)}")
         
-        # Récupérer les paiements associés à ces annonces
+        # Récupérer tous les paiements pour ces annonces pour le débogage
+        all_payments = Payment.objects.filter(annonce_id__in=annonce_ids)
+        logger.info(f"Nombre total de paiements trouvés: {all_payments.count()}")
+        logger.info(f"Types de paiements trouvés: {list(all_payments.values_list('payment_type', flat=True).distinct())}")
+        logger.info(f"Statuts trouvés: {list(all_payments.values_list('status', flat=True).distinct())}")
+        
+        # Récupérer les paiements filtrés
         bookings = Payment.objects.filter(
             annonce_id__in=annonce_ids,
-            payment_type='table',
-            status='COMPLETED'
+            payment_type__in=['table', 'reservation'],  # Accepter les deux types possibles
+            status__in=['completed', 'COMPLETED']  # Accepter les deux formats possibles
         ).order_by('-created')
+        
+        logger.info(f"Nombre de réservations après filtrage: {bookings.count()}")
         
         serializer = PaymentSerializer(bookings, many=True)
         return Response(serializer.data)
