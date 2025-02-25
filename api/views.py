@@ -582,3 +582,27 @@ def upload_annonce_photo(request, pk):
             {'error': 'Une erreur est survenue lors du téléchargement de la photo'},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def received_bookings(request):
+    """Récupère les réservations reçues pour les établissements de l'annonceur."""
+    try:
+        # Récupérer les IDs des annonces de l'annonceur
+        annonce_ids = Annonce.objects.filter(utilisateur=request.user).values_list('id', flat=True)
+        
+        # Récupérer les paiements associés à ces annonces
+        bookings = Payment.objects.filter(
+            annonce_id__in=annonce_ids,
+            payment_type='reservation',
+            status='COMPLETED'
+        ).order_by('-created')
+        
+        serializer = PaymentSerializer(bookings, many=True)
+        return Response(serializer.data)
+    except Exception as e:
+        logger.error(f"Erreur dans received_bookings: {str(e)}")
+        return Response(
+            {'error': 'Une erreur est survenue lors de la récupération des réservations'},
+            status=500
+        )
