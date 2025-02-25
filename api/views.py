@@ -594,7 +594,7 @@ def received_bookings(request):
         # Récupérer les paiements associés à ces annonces
         bookings = Payment.objects.filter(
             annonce_id__in=annonce_ids,
-            payment_type='reservation',
+            payment_type='table',
             status='COMPLETED'
         ).order_by('-created')
         
