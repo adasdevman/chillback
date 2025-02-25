@@ -18,9 +18,9 @@ from core.serializers.annonce import (
     SousCategorieSerializer,
     HoraireSerializer,
     TarifSerializer,
-    GaleriePhotoSerializer,
-    PaymentSerializer
+    GaleriePhotoSerializer
 )
+from core.serializers.payment import PaymentSerializer
 from core.serializers.notification import NotificationSerializer
 from .serializers.auth import (
     UserSerializer,
