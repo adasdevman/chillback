@@ -615,3 +615,38 @@ def received_bookings(request):
             {'error': 'Une erreur est survenue lors de la récupération des réservations'},
             status=500
         )
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def sold_tickets(request):
+    """Récupère les tickets vendus pour les événements de l'annonceur."""
+    try:
+        # Récupérer les IDs des annonces de l'annonceur
+        annonce_ids = Annonce.objects.filter(utilisateur=request.user).values_list('id', flat=True)
+        logger.info(f"IDs des événements trouvés pour l'utilisateur {request.user.id}: {list(annonce_ids)}")
+        
+        # Récupérer tous les paiements de tickets pour ces annonces pour le débogage
+        all_tickets = Payment.objects.filter(
+            annonce_id__in=annonce_ids,
+            payment_type='ticket'
+        )
+        logger.info(f"Nombre total de tickets trouvés: {all_tickets.count()}")
+        logger.info(f"Statuts des tickets trouvés: {list(all_tickets.values_list('status', flat=True).distinct())}")
+        
+        # Récupérer les tickets vendus (complétés)
+        tickets = Payment.objects.filter(
+            annonce_id__in=annonce_ids,
+            payment_type='ticket',
+            status__in=['completed', 'COMPLETED']  # Accepter les deux formats possibles
+        ).order_by('-created')
+        
+        logger.info(f"Nombre de tickets vendus après filtrage: {tickets.count()}")
+        
+        serializer = PaymentSerializer(tickets, many=True)
+        return Response(serializer.data)
+    except Exception as e:
+        logger.error(f"Erreur dans sold_tickets: {str(e)}")
+        return Response(
+            {'error': 'Une erreur est survenue lors de la récupération des tickets vendus'},
+            status=500
+        )
