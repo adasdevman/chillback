@@ -157,27 +157,3 @@ class AnnonceDetailSerializer(TimeStampedModelSerializer):
         ]
         read_only_fields = ['utilisateur']
 
-class PaymentSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Payment
-        fields = [
-            'id',
-            'user',
-            'annonce',
-            'amount',
-            'status',
-            'payment_type',
-            'tarif',
-            'created',
-            'modified'
-        ]
-        read_only_fields = ['status', 'created', 'modified']
-
-    def create(self, validated_data):
-        validated_data['user'] = self.context['request'].user
-        return super().create(validated_data)
-
-    def validate_payment_type(self, value):
-        if value not in ['ticket', 'table']:
-            raise serializers.ValidationError("Le type de paiement doit être 'ticket' ou 'table'")
-        return value 
