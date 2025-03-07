@@ -6,7 +6,7 @@ from .views import (
     create_payment, payment_history, CinetPayWebhookView,
     check_email, mes_annonces, mes_tickets, mes_chills,
     NotificationViewSet, upload_annonce_photo, received_bookings,
-    sold_tickets
+    sold_tickets, delete_account_view
 )
 
 app_name = 'api'
@@ -20,6 +20,7 @@ urlpatterns = [
     path('auth/login/', login_view, name='login'),
     path('auth/register/', register_view, name='register'),
     path('auth/register/annonceur/', register_annonceur_view, name='register-annonceur'),
+    path('auth/delete-account/', delete_account_view, name='delete-account'),
     path('profile/', profile_view, name='profile'),
     path('categories/', CategorieList.as_view(), name='category-list'),
     path('annonces/', AnnonceList.as_view(), name='annonce-list'),

@@ -650,3 +650,45 @@ def sold_tickets(request):
             {'error': 'Une erreur est survenue lors de la récupération des tickets vendus'},
             status=500
         )
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def delete_account_view(request):
+    """
+    Vue pour supprimer (désactiver) un compte utilisateur.
+    Requiert le mot de passe actuel pour confirmation.
+    """
+    password = request.data.get('password')
+    if not password:
+        return Response(
+            {'error': 'Le mot de passe est requis'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    user = request.user
+    
+    # Vérifier le mot de passe
+    if not user.check_password(password):
+        return Response(
+            {'error': 'Mot de passe incorrect'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    try:
+        # Désactiver le compte
+        user.is_active = False
+        # Ajouter un marqueur de suppression
+        user.email = f"deleted_{user.email}"  # Pour permettre la réutilisation de l'email
+        user.save()
+        
+        # Révoquer tous les tokens JWT de l'utilisateur
+        RefreshToken.for_user(user)
+        
+        return Response(status=status.HTTP_204_NO_CONTENT)
+        
+    except Exception as e:
+        logger.error(f"Erreur lors de la suppression du compte: {str(e)}")
+        return Response(
+            {'error': 'Une erreur est survenue lors de la suppression du compte'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
