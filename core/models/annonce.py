@@ -120,4 +120,13 @@ class GaleriePhoto(models.Model):
         verbose_name_plural = 'Photos'
 
     def __str__(self):
-        return f"Photo pour {self.annonce.titre}" 
+        return f"Photo pour {self.annonce.titre}"
+
+    def delete(self, *args, **kwargs):
+        # Delete the physical file first
+        if self.image:
+            storage = self.image.storage
+            if storage.exists(self.image.name):
+                storage.delete(self.image.name)
+        # Then delete the database record
+        super().delete(*args, **kwargs) 

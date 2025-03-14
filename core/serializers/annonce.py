@@ -59,6 +59,7 @@ class AnnonceSerializer(TimeStampedModelSerializer):
     annonceur = UserProfileSerializer(source='utilisateur', read_only=True)
     categorie = CategorieSerializer(read_only=True)
     sous_categorie = SousCategorieSerializer(read_only=True)
+    deleted_images = serializers.ListField(child=serializers.CharField(), write_only=True, required=False)
     
     # Explicitly declare all fields
     titre = serializers.CharField(required=True)
@@ -75,7 +76,7 @@ class AnnonceSerializer(TimeStampedModelSerializer):
             'date_evenement', 'est_actif', 'categorie_id',
             'sous_categorie_id', 'categorie', 'sous_categorie',
             'photos', 'horaires', 'tarifs', 'annonceur',
-            'created', 'modified', 'status'
+            'created', 'modified', 'status', 'deleted_images'
         ]
         read_only_fields = ['utilisateur']
 
@@ -136,6 +137,21 @@ class AnnonceSerializer(TimeStampedModelSerializer):
                 prix=tarif_data['prix']
             )
         
+        return instance
+
+    def update(self, instance, validated_data):
+        # Gérer les images supprimées
+        deleted_images = self.initial_data.get('deleted_images', [])
+        if deleted_images:
+            for image_url in deleted_images:
+                try:
+                    photo = instance.photos.get(image=image_url)
+                    photo.delete()
+                except GaleriePhoto.DoesNotExist:
+                    continue
+
+        # Mettre à jour les autres champs
+        instance = super().update(instance, validated_data)
         return instance
 
 class AnnonceDetailSerializer(TimeStampedModelSerializer):
