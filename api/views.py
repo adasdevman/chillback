@@ -10,7 +10,7 @@ from core.models import (
     Categorie, SousCategorie, Annonce,
     GaleriePhoto, Horaire, Payment, Tarif, Notification
 )
-from core.serializers.annonce import (
+from core.serializers import (
     AnnonceListSerializer,
     AnnonceSerializer,
     AnnonceDetailSerializer,
@@ -18,10 +18,10 @@ from core.serializers.annonce import (
     SousCategorieSerializer,
     HoraireSerializer,
     TarifSerializer,
-    GaleriePhotoSerializer
+    GaleriePhotoSerializer,
+    PaymentSerializer,
+    NotificationSerializer
 )
-from core.serializers.payment import PaymentSerializer
-from core.serializers.notification import NotificationSerializer
 from .serializers.auth import (
     UserSerializer,
     LoginSerializer,
