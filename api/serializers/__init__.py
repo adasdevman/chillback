@@ -9,9 +9,10 @@ from .auth import (
 from core.serializers.annonce import (
     CategorieSerializer,
     AnnonceListSerializer,
-    AnnonceSerializer,
-    PaymentSerializer
+    AnnonceSerializer
 )
+
+from core.serializers.payment import PaymentSerializer
 
 __all__ = [
     'UserSerializer',
