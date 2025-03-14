@@ -145,9 +145,13 @@ class AnnonceSerializer(TimeStampedModelSerializer):
         if deleted_images:
             for image_url in deleted_images:
                 try:
-                    photo = instance.photos.get(image=image_url)
-                    photo.delete()
-                except GaleriePhoto.DoesNotExist:
+                    # Extraire le nom du fichier de l'URL
+                    image_name = image_url.split('/')[-1]
+                    photos = instance.photos.filter(image__contains=image_name)
+                    for photo in photos:
+                        photo.delete()  # Ceci appellera la méthode delete personnalisée
+                except Exception as e:
+                    print(f"Erreur lors de la suppression de l'image {image_url}: {str(e)}")
                     continue
 
         # Mettre à jour les autres champs
